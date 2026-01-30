@@ -28,3 +28,4 @@ scripts/*voltagent*.py
 scripts/*html*.py
 scripts/*similar*.py
 scripts/*count*.py
+.DS_Store
