@@ -92,4 +92,9 @@ if __name__ == "__main__":
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     skills_path = os.path.join(base_dir, "skills")
     output_path = os.path.join(base_dir, "skills_index.json")
+    
+    if not os.path.exists(skills_path):
+        print(f"❌ Error: Skills directory not found at {skills_path}")
+        exit(1)
+        
     generate_index(skills_path, output_path)

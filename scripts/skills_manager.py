@@ -13,7 +13,8 @@ import sys
 import os
 from pathlib import Path
 
-SKILLS_DIR = Path(__file__).parent.parent / "skills"
+BASE_DIR = Path(__file__).resolve().parent.parent
+SKILLS_DIR = BASE_DIR / "skills"
 DISABLED_DIR = SKILLS_DIR / ".disabled"
 
 def list_active():

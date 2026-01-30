@@ -139,4 +139,17 @@ def update_readme():
     print("✅ README.md updated successfully with Collections link and Risk columns.")
 
 if __name__ == "__main__":
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    readme_path = os.path.join(base_dir, "README.md")
+    index_path = os.path.join(base_dir, "skills_index.json")
+    
+    if not os.path.exists(index_path):
+        print(f"❌ Error: Index file not found at {index_path}")
+        print("💡 Run 'python3 scripts/generate_index.py' first.")
+        exit(1)
+        
+    if not os.path.exists(readme_path):
+        print(f"❌ Error: README.md not found at {readme_path}")
+        exit(1)
+        
     update_readme()
