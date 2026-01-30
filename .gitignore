@@ -4,3 +4,6 @@ walkthrough.md
 .agent/rules/
 .gemini/
 LOCAL_CONFIG.md
+
+agent-factory/library/
+agent-factory/ref/
