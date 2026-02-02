@@ -72,6 +72,14 @@ The following skills were added from the curated collection at [VoltAgent/awesom
 - **memory-systems** - [muratcankoylan](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)
 - **terraform-skill** - [antonbabenko](https://github.com/antonbabenko/terraform-skill)
 
+## Skills from whatiskadudoing/fp-ts-skills (v4.4.0)
+
+| Skill | Original Source | License | Notes |
+| :---- | :-------------- | :------ | :---- |
+| `fp-ts-pragmatic` | [whatiskadudoing/fp-ts-skills](https://github.com/whatiskadudoing/fp-ts-skills) | Compatible | Pragmatic fp-ts guide – pipe, Option, Either, TaskEither |
+| `fp-ts-react` | [whatiskadudoing/fp-ts-skills](https://github.com/whatiskadudoing/fp-ts-skills) | Compatible | fp-ts with React 18/19 and Next.js |
+| `fp-ts-errors` | [whatiskadudoing/fp-ts-skills](https://github.com/whatiskadudoing/fp-ts-skills) | Compatible | Type-safe error handling with Either and TaskEither |
+
 ## License Policy
 
 - **Code**: All original code in this repository is **MIT**.

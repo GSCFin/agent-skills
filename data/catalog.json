@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-01-30T08:24:49.993Z",
-  "total": 614,
+  "generatedAt": "2026-02-02T07:24:12.003Z",
+  "total": 619,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -5874,6 +5874,84 @@
       "path": "skills/form-cro/SKILL.md"
     },
     {
+      "id": "fp-ts-errors",
+      "name": "fp-ts-errors",
+      "description": "Handle errors as values using fp-ts Either and TaskEither for cleaner, more predictable TypeScript code. Use when implementing error handling patterns with fp-ts.",
+      "category": "development",
+      "tags": [
+        "fp",
+        "ts",
+        "errors"
+      ],
+      "triggers": [
+        "fp",
+        "ts",
+        "errors",
+        "handle",
+        "values",
+        "either",
+        "taskeither",
+        "cleaner",
+        "predictable",
+        "typescript",
+        "code",
+        "implementing"
+      ],
+      "path": "skills/fp-ts-errors/SKILL.md"
+    },
+    {
+      "id": "fp-ts-pragmatic",
+      "name": "fp-ts-pragmatic",
+      "description": "A practical, jargon-free guide to fp-ts functional programming - the 80/20 approach that gets results without the academic overhead. Use when writing TypeScript with fp-ts library.",
+      "category": "development",
+      "tags": [
+        "fp",
+        "ts",
+        "pragmatic"
+      ],
+      "triggers": [
+        "fp",
+        "ts",
+        "pragmatic",
+        "practical",
+        "jargon",
+        "free",
+        "functional",
+        "programming",
+        "80",
+        "20",
+        "approach",
+        "gets"
+      ],
+      "path": "skills/fp-ts-pragmatic/SKILL.md"
+    },
+    {
+      "id": "fp-ts-react",
+      "name": "fp-ts-react",
+      "description": "Practical patterns for using fp-ts with React - hooks, state, forms, data fetching. Use when building React apps with functional programming patterns. Works with React 18/19, Next.js 14/15.",
+      "category": "data-ai",
+      "tags": [
+        "fp",
+        "ts",
+        "react"
+      ],
+      "triggers": [
+        "fp",
+        "ts",
+        "react",
+        "practical",
+        "hooks",
+        "state",
+        "forms",
+        "data",
+        "fetching",
+        "building",
+        "apps",
+        "functional"
+      ],
+      "path": "skills/fp-ts-react/SKILL.md"
+    },
+    {
       "id": "framework-migration-code-migrate",
       "name": "framework-migration-code-migrate",
       "description": "You are a code migration expert specializing in transitioning codebases between frameworks, languages, versions, and platforms. Generate comprehensive migration plans, automated migration scripts, and",
@@ -10593,6 +10671,30 @@
       "path": "skills/quant-analyst/SKILL.md"
     },
     {
+      "id": "radix-ui-design-system",
+      "name": "radix-ui-design-system",
+      "description": "Build accessible design systems with Radix UI primitives. Headless component customization, theming strategies, and compound component patterns for production-grade UI libraries.",
+      "category": "architecture",
+      "tags": [
+        "radix",
+        "ui"
+      ],
+      "triggers": [
+        "radix",
+        "ui",
+        "accessible",
+        "primitives",
+        "headless",
+        "component",
+        "customization",
+        "theming",
+        "compound",
+        "grade",
+        "libraries"
+      ],
+      "path": "skills/radix-ui-design-system/SKILL.md"
+    },
+    {
       "id": "rag-engineer",
       "name": "rag-engineer",
       "description": "Expert in building Retrieval-Augmented Generation systems. Masters embedding models, vector databases, chunking strategies, and retrieval optimization for LLM applications. Use when: building RAG, vector search, embeddings, semantic search, document retrieval.",
@@ -12821,6 +12923,31 @@
         "cac"
       ],
       "path": "skills/startup-metrics-framework/SKILL.md"
+    },
+    {
+      "id": "stitch-ui-design",
+      "name": "stitch-ui-design",
+      "description": "Expert guide for creating effective prompts for Google Stitch AI UI design tool. Use when user wants to design UI/UX in Stitch, create app interfaces, generate mobile/web designs, or needs help crafting Stitch prompts. Covers prompt structure, specificity techniques, iteration strategies, and design-to-code workflows for Stitch by Google.",
+      "category": "data-ai",
+      "tags": [
+        "stitch",
+        "ui"
+      ],
+      "triggers": [
+        "stitch",
+        "ui",
+        "creating",
+        "effective",
+        "prompts",
+        "google",
+        "ai",
+        "user",
+        "wants",
+        "ux",
+        "app",
+        "interfaces"
+      ],
+      "path": "skills/stitch-ui-design/SKILL.md"
     },
     {
       "id": "stride-analysis-patterns",

@@ -1,6 +1,6 @@
-# 🌌 Antigravity Awesome Skills: 621+ Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
+# 🌌 Antigravity Awesome Skills: 626+ Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
 
-> **The Ultimate Collection of 621+ Universal Agentic Skills for AI Coding Assistants — Claude Code, Gemini CLI, Codex CLI, Antigravity IDE, GitHub Copilot, Cursor, OpenCode**
+> **The Ultimate Collection of 626+ Universal Agentic Skills for AI Coding Assistants — Claude Code, Gemini CLI, Codex CLI, Antigravity IDE, GitHub Copilot, Cursor, OpenCode, AdaL**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Anthropic-purple)](https://claude.ai)
@@ -10,8 +10,9 @@
 [![Copilot](https://img.shields.io/badge/GitHub%20Copilot-VSCode-lightblue)](https://github.com/features/copilot)
 [![OpenCode](https://img.shields.io/badge/OpenCode-CLI-gray)](https://github.com/opencode-ai/opencode)
 [![Antigravity](https://img.shields.io/badge/Antigravity-DeepMind-red)](https://github.com/sickn33/antigravity-awesome-skills)
+[![AdaL](https://img.shields.io/badge/AdaL-Self--evolving%20Agent-pink)](https://github.com/HumanSignal/Adala)
 
-**Antigravity Awesome Skills** is a curated, battle-tested library of **614 high-performance agentic skills** designed to work seamlessly across all major AI coding assistants:
+**Antigravity Awesome Skills** is a curated, battle-tested library of **626 high-performance agentic skills** designed to work seamlessly across all major AI coding assistants:
 
 - 🟣 **Claude Code** (Anthropic CLI)
 - 🔵 **Gemini CLI** (Google DeepMind)
@@ -20,6 +21,7 @@
 - 🩵 **GitHub Copilot** (VSCode Extension)
 - 🟠 **Cursor** (AI-native IDE)
 - ⚪ **OpenCode** (Open-source CLI)
+- 🌸 **AdaL** (Self-evolving AI Agent)
 
 This repository provides essential skills to transform your AI assistant into a **full-stack digital agency**, including official capabilities from **Anthropic**, **OpenAI**, **Google**, **Supabase**, and **Vercel Labs**.
 
@@ -29,7 +31,7 @@ This repository provides essential skills to transform your AI assistant into a 
 - [🔌 Compatibility & Invocation](#compatibility--invocation)
 - [📦 Features & Categories](#features--categories)
 - [🎁 Curated Collections (Bundles)](#curated-collections)
-- [📚 Browse 621+ Skills](#browse-621-skills)
+- [📚 Browse 626+ Skills](#browse-626-skills)
 - [🛠️ Installation](#installation)
 - [🤝 How to Contribute](#how-to-contribute)
 - [👥 Contributors & Credits](#credits--sources)
@@ -52,7 +54,7 @@ AI Agents (like Claude Code, Cursor, or Gemini) are smart, but they lack **speci
 
 ### 2. ⚡️ Quick Start (The "Bundle" Way)
 
-Don't install 614+ skills manually. Use our **Starter Packs**:
+Install once (clone or npx); then use our **Starter Packs** in [docs/BUNDLES.md](docs/BUNDLES.md) to see which skills fit your role. You get the full repo; Starter Packs are curated lists, not a separate install.
 
 1.  **Install** (pick one):
     ```bash
@@ -89,6 +91,7 @@ These skills follow the universal **SKILL.md** format and work with any AI codin
 | **Antigravity** | IDE  | `(Agent Mode) Use skill...`       | `.agent/skills/`  |
 | **Cursor**      | IDE  | `@skill-name (in Chat)`           | `.cursor/skills/` |
 | **Copilot**     | Ext  | `(Paste content manually)`        | N/A               |
+| **AdaL**        | Agent | `(Agent Mode) Use skill...`       | `.agent/skills/`  |
 
 > [!TIP]
 > **Universal Path**: We recommend cloning to `.agent/skills/`. Most modern tools (Antigravity, recent CLIs) look here by default.
@@ -100,7 +103,7 @@ These skills follow the universal **SKILL.md** format and work with any AI codin
 
 ---
 
-Whether you are using **Gemini CLI**, **Claude Code**, **Codex CLI**, **Cursor**, **GitHub Copilot**, **Antigravity**, or **OpenCode**, these skills are designed to drop right in and supercharge your AI agent.
+Whether you are using **Gemini CLI**, **Claude Code**, **Codex CLI**, **Cursor**, **GitHub Copilot**, **Antigravity**, **OpenCode**, or **AdaL**, these skills are designed to drop right in and supercharge your AI agent.
 
 This repository aggregates the best capabilities from across the open-source community, transforming your AI assistant into a full-stack digital agency capable of Engineering, Design, Security, Marketing, and Autonomous Operations.
 
@@ -124,7 +127,7 @@ The repository is organized into specialized domains to transform your AI into a
 
 [Check out our Starter Packs in docs/BUNDLES.md](docs/BUNDLES.md) to find the perfect toolkit for your role.
 
-## Browse 621+ Skills
+## Browse 626+ Skills
 
 We have moved the full skill registry to a dedicated catalog to keep this README clean.
 
@@ -132,7 +135,7 @@ We have moved the full skill registry to a dedicated catalog to keep this README
 
 ## Installation
 
-To use these skills with **Claude Code**, **Gemini CLI**, **Codex CLI**, **Cursor**, **Antigravity**, or **OpenCode**:
+To use these skills with **Claude Code**, **Gemini CLI**, **Codex CLI**, **Cursor**, **Antigravity**, **OpenCode**, or **AdaL**:
 
 ### Option A: npx (recommended)
 
@@ -154,6 +157,8 @@ npx antigravity-awesome-skills --path ./my-skills
 ```
 
 Run `npx antigravity-awesome-skills --help` for all options. If the directory already exists, the installer runs `git pull` to update.
+
+> **If you see a 404 error:** the package may not be published to npm yet. Use: `npx github:sickn33/antigravity-awesome-skills`
 
 ### Option B: git clone
 
@@ -229,6 +234,7 @@ This collection would not be possible without the incredible work of the Claude 
 - **[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)**: Marketing skills for CRO, copywriting, SEO, paid ads, and growth (23 skills, MIT).
 - **[vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit)**: AI Agent templates with Skills, Agents, and Workflows (33 skills, MIT).
 - **[affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: Complete Claude Code configuration collection from Anthropic hackathon winner - skills only (8 skills, MIT).
+- **[whatiskadudoing/fp-ts-skills](https://github.com/whatiskadudoing/fp-ts-skills)**: Practical fp-ts skills for TypeScript – fp-ts-pragmatic, fp-ts-react, fp-ts-errors (v4.4.0).
 - **[webzler/agentMemory](https://github.com/webzler/agentMemory)**: Source for the agent-memory-mcp skill.
 - **[sstklen/claude-api-cost-optimization](https://github.com/sstklen/claude-api-cost-optimization)**: Save 50-90% on Claude API costs with smart optimization strategies (MIT).
 
@@ -266,33 +272,47 @@ ai-developer-tools, ai-pair-programming, vibe-coding, skill, skills, SKILL.md, r
 
 ## Repo Contributors
 
+<a href="https://github.com/sickn33/antigravity-awesome-skills/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sickn33/antigravity-awesome-skills" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
 We officially thank the following contributors for their help in making this repository awesome!
 
-- [mvanhorn](https://github.com/mvanhorn)
-- [rookie-ricardo](https://github.com/rookie-ricardo)
-- [sck_0](https://github.com/sck_0)
-- [Munir Abbasi](https://github.com/munirabbasi)
-- [Mohammad Faiz](https://github.com/mohdfaiz2k9)
-- [Ianj332](https://github.com/Ianj332)
+- [sck_0](https://github.com/sck000)
+- [Munir Abbasi](https://github.com/munir-abbasi)
 - [sickn33](https://github.com/sickn33)
+- [Mohammad Faiz](https://github.com/Mohammad-Faiz-Cloud-Engineer)
+- [Đỗ Khắc Gia Khoa](https://github.com/Dokhacgiakhoa)
+- [Ianj332](https://github.com/IanJ332)
 - [GuppyTheCat](https://github.com/GuppyTheCat)
 - [Tiger-Foxx](https://github.com/Tiger-Foxx)
 - [arathiesh](https://github.com/arathiesh)
 - [1bcMax](https://github.com/1bcMax)
+- [ALEKGG1](https://github.com/ALEKGG1)
 - [Ahmed Rehan](https://github.com/ar27111994)
 - [BenedictKing](https://github.com/BenedictKing)
+- [whatiskadudoing](https://github.com/whatiskadudoing)
 - [Nguyen Huu Loc](https://github.com/LocNguyenSGU)
 - [Owen Wu](https://github.com/yubing744)
 - [SuperJMN](https://github.com/SuperJMN)
+- [Truong Nguyen](https://github.com/truongnmt)
 - [Viktor Ferenczi](https://github.com/viktor-ferenczi)
-- [Đỗ Khắc Gia Khoa](https://github.com/Dokhacgiakhoa)
-- [evandro-miguel](https://github.com/evandro-miguel)
+- [c1c3ru](https://github.com/c1c3ru)
+- [ckdwns9121](https://github.com/ckdwns9121)
 - [junited31](https://github.com/junited31)
-- [krisnasantosa15](https://github.com/krisnasantosa15)
-- [raeef1001](https://github.com/raeef1001)
+- [liyin2015](https://github.com/liyin2015)
+- [krisnasantosa15](https://github.com/KrisnaSantosa15)
+- [sstklen](https://github.com/sstklen)
 - [taksrules](https://github.com/taksrules)
 - [zebbern](https://github.com/zebbern)
 - [vuth-dogo](https://github.com/vuth-dogo)
+- [mvanhorn](https://github.com/mvanhorn)
+- [rookie-ricardo](https://github.com/rookie-ricardo)
+- [evandro-miguel](https://github.com/evandro-miguel)
+- [raeef1001](https://github.com/raeef1001)
+- [devchangjun](https://github.com/devchangjun)
 
 ## Star History
 

@@ -1,10 +1,10 @@
 # Skill Catalog
 
-Generated at: 2026-01-30T08:24:49.993Z
+Generated at: 2026-02-02T07:24:12.003Z
 
-Total skills: 614
+Total skills: 619
 
-## architecture (58)
+## architecture (59)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -53,6 +53,7 @@ Total skills: 614
 | `production-code-audit` | Autonomously deep-scan entire codebase line-by-line, understand architecture and patterns, then systematically transform it to production-grade, corporate-le... | production, code, audit | production, code, audit, autonomously, deep, scan, entire, codebase, line, understand, architecture, then |
 | `projection-patterns` | Build read models and projections from event streams. Use when implementing CQRS read sides, building materialized views, or optimizing query performance in ... | projection | projection, read, models, projections, event, streams, implementing, cqrs, sides, building, materialized, views |
 | `prompt-engineering` | Expert guide on prompt engineering patterns, best practices, and optimization techniques. Use when user wants to improve prompts, learn prompting strategies,... | prompt, engineering | prompt, engineering, optimization, techniques, user, wants, improve, prompts, learn, prompting, debug, agent |
+| `radix-ui-design-system` | Build accessible design systems with Radix UI primitives. Headless component customization, theming strategies, and compound component patterns for productio... | radix, ui | radix, ui, accessible, primitives, headless, component, customization, theming, compound, grade, libraries |
 | `saga-orchestration` | Implement saga patterns for distributed transactions and cross-aggregate workflows. Use when coordinating multi-step business processes, handling compensatin... | saga | saga, orchestration, distributed, transactions, cross, aggregate, coordinating, multi, step, business, processes, handling |
 | `salesforce-development` | Expert patterns for Salesforce platform development including Lightning Web Components (LWC), Apex triggers and classes, REST/Bulk APIs, Connected Apps, and ... | salesforce | salesforce, development, platform, including, lightning, web, components, lwc, apex, triggers, classes, rest |
 | `skill-developer` | Create and manage Claude Code skills following Anthropic best practices. Use when creating new skills, modifying skill-rules.json, understanding trigger patt... | skill | skill, developer, claude, code, skills, following, anthropic, creating, new, modifying, rules, json |
@@ -109,7 +110,7 @@ Total skills: 614
 | `startup-financial-modeling` | This skill should be used when the user asks to "create financial projections", "build a financial model", "forecast revenue", "calculate burn rate", "estima... | startup, financial, modeling | startup, financial, modeling, skill, should, used, user, asks, projections, model, forecast, revenue |
 | `team-composition-analysis` | This skill should be used when the user asks to "plan team structure", "determine hiring needs", "design org chart", "calculate compensation", "plan equity a... | team, composition | team, composition, analysis, skill, should, used, user, asks, plan, structure, determine, hiring |
 
-## data-ai (91)
+## data-ai (93)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -153,6 +154,7 @@ Total skills: 614
 | `fal-image-edit` | AI-powered image editing with style transfer and object removal | fal, image, edit | fal, image, edit, ai, powered, editing, style, transfer, object, removal |
 | `fal-upscale` | Upscale and enhance image and video resolution using AI | fal, upscale | fal, upscale, enhance, image, video, resolution, ai |
 | `fal-workflow` | Generate workflow JSON files for chaining AI models | fal | fal, generate, json, files, chaining, ai, models |
+| `fp-ts-react` | Practical patterns for using fp-ts with React - hooks, state, forms, data fetching. Use when building React apps with functional programming patterns. Works ... | fp, ts, react | fp, ts, react, practical, hooks, state, forms, data, fetching, building, apps, functional |
 | `frontend-dev-guidelines` | Opinionated frontend development standards for modern React + TypeScript applications. Covers Suspense-first data fetching, lazy loading, feature-based archi... | frontend, dev, guidelines | frontend, dev, guidelines, opinionated, development, standards, react, typescript, applications, covers, suspense, first |
 | `geo-fundamentals` | Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity). | geo, fundamentals | geo, fundamentals, generative, engine, optimization, ai, search, engines, chatgpt, claude, perplexity |
 | `graphql` | GraphQL gives clients exactly the data they need - no more, no less. One endpoint, typed schema, introspection. But the flexibility that makes it powerful al... | graphql | graphql, gives, clients, exactly, data, no, less, one, endpoint, typed, schema, introspection |
@@ -191,6 +193,7 @@ Total skills: 614
 | `spark-optimization` | Optimize Apache Spark jobs with partitioning, caching, shuffle optimization, and memory tuning. Use when improving Spark performance, debugging slow jobs, or... | spark, optimization | spark, optimization, optimize, apache, jobs, partitioning, caching, shuffle, memory, tuning, improving, performance |
 | `sql-optimization-patterns` | Master SQL query optimization, indexing strategies, and EXPLAIN analysis to dramatically improve database performance and eliminate slow queries. Use when de... | sql, optimization | sql, optimization, query, indexing, explain, analysis, dramatically, improve, database, performance, eliminate, slow |
 | `sqlmap-database-pentesting` | This skill should be used when the user asks to "automate SQL injection testing," "enumerate database structure," "extract database credentials using sqlmap,... | sqlmap, database, pentesting | sqlmap, database, pentesting, penetration, testing, skill, should, used, user, asks, automate, sql |
+| `stitch-ui-design` | Expert guide for creating effective prompts for Google Stitch AI UI design tool. Use when user wants to design UI/UX in Stitch, create app interfaces, genera... | stitch, ui | stitch, ui, creating, effective, prompts, google, ai, user, wants, ux, app, interfaces |
 | `tdd-orchestrator` | Master TDD orchestrator specializing in red-green-refactor discipline, multi-agent workflow coordination, and comprehensive test-driven development practices... | tdd, orchestrator | tdd, orchestrator, specializing, red, green, refactor, discipline, multi, agent, coordination, test, driven |
 | `team-collaboration-standup-notes` | You are an expert team communication specialist focused on async-first standup practices, AI-assisted note generation from commit history, and effective remo... | team, collaboration, standup, notes | team, collaboration, standup, notes, communication, async, first, ai, assisted, note, generation, commit |
 | `telegram-bot-builder` | Expert in building Telegram bots that solve real problems - from simple automation to complex AI-powered bots. Covers bot architecture, the Telegram Bot API,... | telegram, bot, builder | telegram, bot, builder, building, bots, solve, real, problems, simple, automation, complex, ai |
@@ -205,7 +208,7 @@ Total skills: 614
 | `xlsx` | Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work ... | xlsx | xlsx, spreadsheet, creation, editing, analysis, formulas, formatting, data, visualization, claude, work, spreadsheets |
 | `xlsx-official` | Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work ... | xlsx, official | xlsx, official, spreadsheet, creation, editing, analysis, formulas, formatting, data, visualization, claude, work |
 
-## development (78)
+## development (80)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -232,6 +235,8 @@ Total skills: 614
 | `fastapi-pro` | Build high-performance async APIs with FastAPI, SQLAlchemy 2.0, and Pydantic V2. Master microservices, WebSockets, and modern Python async patterns. Use PROA... | fastapi | fastapi, pro, high, performance, async, apis, sqlalchemy, pydantic, v2, microservices, websockets, python |
 | `fastapi-templates` | Create production-ready FastAPI projects with async patterns, dependency injection, and comprehensive error handling. Use when building new FastAPI applicati... | fastapi | fastapi, async, dependency, injection, error, handling, building, new, applications, setting, up, backend |
 | `firecrawl-scraper` | Deep web scraping, screenshots, PDF parsing, and website crawling using Firecrawl API | firecrawl, scraper | firecrawl, scraper, deep, web, scraping, screenshots, pdf, parsing, website, crawling, api |
+| `fp-ts-errors` | Handle errors as values using fp-ts Either and TaskEither for cleaner, more predictable TypeScript code. Use when implementing error handling patterns with f... | fp, ts, errors | fp, ts, errors, handle, values, either, taskeither, cleaner, predictable, typescript, code, implementing |
+| `fp-ts-pragmatic` | A practical, jargon-free guide to fp-ts functional programming - the 80/20 approach that gets results without the academic overhead. Use when writing TypeScr... | fp, ts, pragmatic | fp, ts, pragmatic, practical, jargon, free, functional, programming, 80, 20, approach, gets |
 | `frontend-design` | Create distinctive, production-grade frontend interfaces with intentional aesthetics, high craft, and non-generic visual identity. Use when building or styli... | frontend | frontend, distinctive, grade, interfaces, intentional, aesthetics, high, craft, non, generic, visual, identity |
 | `frontend-developer` | Build React components, implement responsive layouts, and handle client-side state management. Masters React 19, Next.js 15, and modern frontend architecture... | frontend | frontend, developer, react, components, responsive, layouts, handle, client, side, state, masters, 19 |
 | `frontend-mobile-development-component-scaffold` | You are a React component architecture expert specializing in scaffolding production-ready, accessible, and performant components. Generate complete componen... | frontend, mobile, component | frontend, mobile, component, development, scaffold, react, architecture, specializing, scaffolding, accessible, performant, components |

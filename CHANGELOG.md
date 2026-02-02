@@ -7,7 +7,78 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [4.6.0] - 2026-02-01 - "SPDD & Radix UI Design System"
+
+> Agent workflow docs (SPDD) and Radix UI design system skill.
+
+### Added
+
+- **New Skill**: `radix-ui-design-system` – Build accessible design systems with Radix UI primitives (headless, theming, WCAG, examples).
+- **Docs**: `skills/SPDD/` – Research, spec, and implementation workflow docs (1-research.md, 2-spec.md, 3-implementation.md).
+
+### Registry
+
+- **Total Skills**: 626 (from 625). Catalog regenerated.
+
 ---
+
+## [4.5.0] - 2026-01-31 - "Stitch UI Design"
+
+> Expert prompting guide for Google Stitch AI-powered UI design tool.
+
+### Added
+
+- **New Skill**: `stitch-ui-design` – Expert guide for creating effective prompts for Google Stitch AI UI design tool (Gemini 2.5 Flash). Covers prompt structure, specificity techniques, iteration strategies, design-to-code workflows, and 10+ examples for landing pages, mobile apps, and dashboards.
+
+### Changed
+
+- **Documentation**: Clarified in README.md and GETTING_STARTED.md that installation means cloning the full repo once; Starter Packs are curated lists to discover skills by role, not a different installation method (fixes [#44](https://github.com/sickn33/antigravity-awesome-skills/issues/44)).
+
+### Registry
+
+- **Total Skills**: 625 (from 624). Catalog regenerated.
+
+### Credits
+
+- [@ALEKGG1](https://github.com/ALEKGG1) – stitch-ui-design (PR #45)
+- [@CypherPoet](https://github.com/CypherPoet) – Documentation clarity (#44)
+
+---
+
+## [4.4.0] - 2026-01-30 - "fp-ts skills for TypeScript"
+
+> Three practical fp-ts skills for TypeScript functional programming.
+
+### Added
+
+- **New Skills** (from [whatiskadudoing/fp-ts-skills](https://github.com/whatiskadudoing/fp-ts-skills)):
+  - `fp-ts-pragmatic` – Pipe, Option, Either, TaskEither without academic jargon.
+  - `fp-ts-react` – Patterns for fp-ts with React 18/19 and Next.js 14/15 (state, forms, data fetching).
+  - `fp-ts-errors` – Type-safe error handling with Either and TaskEither.
+
+### Registry
+
+- **Total Skills**: 624 (from 621). Catalog regenerated.
+
+---
+
+## [4.3.0] - 2026-01-29 - "VoltAgent Integration & Context Engineering Suite"
+
+> 61 new skills from VoltAgent/awesome-agent-skills: official team skills and context engineering suite.
+
+### Added
+
+- **61 new skills** from [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills):
+  - **Official (27)**: Sentry (commit, create-pr, find-bugs, iterate-pr), Trail of Bits (culture-index, fix-review, sharp-edges), Expo (expo-deployment, upgrading-expo), Hugging Face (hugging-face-cli, hugging-face-jobs), Vercel, Google Stitch (design-md), Neon (using-neon), n8n (n8n-code-python, n8n-mcp-tools-expert, n8n-node-configuration), SwiftUI, fal.ai (fal-audio, fal-generate, fal-image-edit, fal-platform, fal-upscale, fal-workflow), deep-research, imagen, readme.
+  - **Community (34)**: Context suite (context-fundamentals, context-degradation, context-compression, context-optimization, multi-agent-patterns, memory-systems, evaluation), frontend-slides, linear-claude-skill, skill-rails-upgrade, terraform-skill, tool-design, screenshots, automate-whatsapp, observe-whatsapp, aws-skills, ui-skills, vexor, pypict-skill, makepad-skills, threejs-skills, claude-scientific-skills, claude-win11-speckit-update-skill, security-bluebook-builder, claude-ally-health, clarity-gate, beautiful-prose, claude-speed-reader, skill-seekers, varlock-claude-skill, superpowers-lab, nanobanana-ppt-skills, x-article-publisher-skill, ffuf-claude-skill.
+
+### Registry
+
+- **Total Skills**: 614 (from 553). Catalog and SOURCES.md updated.
+
+### Credits
+
+- VoltAgent/awesome-agent-skills and official teams (Sentry, Trail of Bits, Expo, Hugging Face, Vercel Labs, Google Labs, Neon, fal.ai).
 
 ---
 
@@ -120,7 +191,7 @@ The following skills are now correctly indexed and visible in the registry:
 - **Documentation**:
   - `docs/EXAMPLES.md`: Cookbook with 3 real-world scenarios.
   - `docs/SOURCES.md`: Legal ledger for attributions and licenses.
-  - `RELEASE_NOTES.md`: Generated release announcement (archived).
+  - Release announcements are documented in this CHANGELOG.
 
 ### Changed
 

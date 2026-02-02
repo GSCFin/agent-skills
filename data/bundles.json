@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-30T08:24:49.993Z",
+  "generatedAt": "2026-02-02T07:24:12.003Z",
   "bundles": {
     "core-dev": {
       "description": "Core development skills across languages, frameworks, and backend/frontend fundamentals.",
@@ -45,6 +45,9 @@
         "firebase",
         "firecrawl-scraper",
         "flutter-expert",
+        "fp-ts-errors",
+        "fp-ts-pragmatic",
+        "fp-ts-react",
         "frontend-design",
         "frontend-dev-guidelines",
         "frontend-developer",
@@ -109,6 +112,7 @@
         "shopify-apps",
         "shopify-development",
         "slack-bot-builder",
+        "stitch-ui-design",
         "swiftui-expert-skill",
         "systems-programming-rust-project",
         "tavily-web",
@@ -276,6 +280,7 @@
         "database-optimizer",
         "dbt-transformation-patterns",
         "firebase",
+        "fp-ts-react",
         "frontend-dev-guidelines",
         "gdpr-data-handling",
         "graphql",

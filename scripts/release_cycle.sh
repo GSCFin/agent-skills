@@ -21,8 +21,12 @@ python3 scripts/generate_index.py
 echo "Running update_readme.py..."
 python3 scripts/update_readme.py
 
-# 2. Stats Consistency Check
-echo -e "\n${YELLOW}Step 2: verifying Stats Consistency...${NC}"
+# 2. Catalog (required for CI)
+echo -e "\n${YELLOW}Step 2: Build catalog...${NC}"
+npm run catalog
+
+# 3. Stats Consistency Check
+echo -e "\n${YELLOW}Step 3: Verifying Stats Consistency...${NC}"
 JSON_COUNT=$(python3 -c "import json; print(len(json.load(open('skills_index.json'))))")
 echo "Skills in Registry (JSON): $JSON_COUNT"
 
@@ -36,8 +40,14 @@ if [[ "$README_CONTENT" != *"$JSON_COUNT high-performance"* ]]; then
 fi
 echo -e "${GREEN}✅ Stats Consistent.${NC}"
 
-# 3. Contributor Check
-echo -e "\n${YELLOW}Step 3: Contributor Check${NC}"
+# 4. Version check (package.json is source of truth for npm)
+echo -e "\n${YELLOW}Step 4: Version check${NC}"
+PKG_VERSION=$(node -p "require('./package.json').version")
+echo "package.json version: $PKG_VERSION"
+echo "Ensure this version is bumped before 'npm publish' (npm forbids republishing the same version)."
+
+# 5. Contributor Check
+echo -e "\n${YELLOW}Step 5: Contributor Check${NC}"
 echo "Recent commits by author (check against README 'Repo Contributors'):"
 git shortlog -sn --since="1 month ago" --all --no-merges | head -n 10
 
@@ -52,4 +62,5 @@ if [ "$CONFIRM_CONTRIB" != "yes" ]; then
 fi
 
 echo -e "\n${GREEN}✅ Release Cycle Checks Passed. You may now commit and push.${NC}"
+echo -e "${YELLOW}After tagging a release: run \`npm publish\` from repo root (or use GitHub Release + NPM_TOKEN for CI).${NC}"
 exit 0

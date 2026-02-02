@@ -41,7 +41,7 @@ it means you **did not run or commit** the Validation Chain correctly.
 
 ### 3. 📝 EVIDENCE OF WORK
 
-- You must create/update `walkthrough.md` or `RELEASE_NOTES.md` to document what changed.
+- You must create/update `walkthrough.md` or `CHANGELOG.md` to document what changed.
 - If you made something new, **link it** in the artifacts.
 
 ### 4. 🚫 NO BRANCHES
@@ -172,20 +172,30 @@ Reject any PR that fails this:
 When cutting a new version (e.g., V4):
 
 1.  **Run Full Validation**: `python3 scripts/validate_skills.py --strict`
-2.  **Update Changelog**: Create `RELEASE_NOTES.md`.
-3.  **Bump Version**: Update header in `README.md`.
+2.  **Update Changelog**: Add the new release section to `CHANGELOG.md`.
+3.  **Bump Version**:
+    - Update `package.json` → `"version": "X.Y.Z"` (source of truth for npm).
+    - Update version header in `README.md` if it displays the number.
+    - One-liner: `npm version patch` (or `minor`/`major`) — bumps `package.json` and creates a git tag; then amend if you need to tag after release.
 4.  **Tag Release**:
     ```bash
     git tag -a v4.0.0 -m "V4 Enterprise Edition"
     git push origin v4.0.0
     ```
+5.  **Publish to npm** (so `npx antigravity-awesome-skills` works):
+    - **Option A (manual):** From repo root, with npm logged in and 2FA/token set up:
+      ```bash
+      npm publish
+      ```
+      You cannot republish the same version; always bump `package.json` before publishing.
+    - **Option B (CI):** On GitHub, create a **Release** (tag e.g. `v4.6.1`). The workflow [Publish to npm](.github/workflows/publish-npm.yml) runs on **Release published** and runs `npm publish` if the repo secret `NPM_TOKEN` is set (npm → Access Tokens → Granular token with Publish, then add as repo secret `NPM_TOKEN`).
 
-### 📋 Release Note Template
+### 📋 Changelog Entry Template
 
-All changeslogs/release notes MUST follow this structure to ensure professionalism and quality:
+Each new release section in `CHANGELOG.md` should follow [Keep a Changelog](https://keepachangelog.com/) and this structure:
 
 ```markdown
-# Release vX.Y.Z: [Theme Name]
+## [X.Y.Z] - YYYY-MM-DD - "[Theme Name]"
 
 > **[One-line catchy summary of the release]**
 
