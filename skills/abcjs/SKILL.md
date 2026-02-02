@@ -1,6 +1,6 @@
 ---
 name: abcjs
-description: JavaScript library for rendering ABC music notation as SVG and playing it as audio. Use when implementing music notation rendering, audio playback, interactive music editors, or animation synchronized with music. Triggers on tasks involving ABC notation, sheet music display, music synthesis, or MIDI generation.
+description: Skill for writing ABC Notation (v2.1 standard) and using the abcjs JavaScript library to render sheet music in web applications. Use when writing ABC notation files, implementing music notation rendering on websites, or integrating audio playback and animation. Triggers on tasks involving ABC notation syntax, sheet music display, music synthesis, or MIDI generation.
 argument-hint: <abc-notation-string-or-file>
 metadata:
   author: paulrosen
@@ -10,9 +10,16 @@ metadata:
   repo: https://github.com/paulrosen/abcjs
 ---
 
-# abcjs - Music Notation Library
+# abcjs - ABC Notation & Music Rendering
 
-JavaScript library for rendering standard music notation in the browser using ABC notation format. Provides SVG rendering, audio synthesis, live editing, and playback animation.
+This skill provides guidance for **writing ABC Notation** (v2.1 standard) and using the **abcjs JavaScript library** to render sheet music in web applications. The abcjs library is a browser/NodeJS library for rendering ABC notation as SVG and playing it as audio—it is NOT a NodeJS module itself, but a JavaScript library used in web/NodeJS website projects.
+
+**Primary Use Cases:**
+
+- Writing ABC notation files following the v2.1 standard
+- Rendering sheet music on websites using the abcjs library
+- Implementing audio playback and animation synchronized with music
+- Building interactive music editors and notation tools
 
 ## Reference Implementation
 
