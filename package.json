@@ -1,6 +1,6 @@
 {
   "name": "antigravity-awesome-skills",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "description": "626+ agentic skills for Claude Code, Gemini CLI, Cursor, Antigravity & more. Installer CLI.",
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,8 @@
     "readme": "python3 scripts/update_readme.py",
     "chain": "npm run validate && npm run index && npm run readme",
     "catalog": "node scripts/build-catalog.js",
-    "build": "npm run chain && npm run catalog"
+    "build": "npm run chain && npm run catalog",
+    "test": "node scripts/tests/validate_skills_headings.test.js && python3 scripts/tests/test_validate_skills_headings.py"
   },
   "devDependencies": {
     "yaml": "^2.8.2"

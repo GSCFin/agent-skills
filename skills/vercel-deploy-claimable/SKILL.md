@@ -1,6 +1,6 @@
 ---
 name: vercel-deploy-claimable
-description: "Deploy applications and websites to Vercel. Use this skill when the user requests deployment actions such as "Deploy my app", "Deploy this to production", "Create a preview deployment", "Deploy and give me the link", or "Push this live". No authentication required - returns preview URL and claimable deployment link."
+description: "Deploy applications and websites to Vercel. Use this skill when the user requests deployment actions such as 'Deploy my app', 'Deploy this to production', 'Create a preview deployment', 'Deploy and give me the link', or 'Push this live'. No authentication required - returns preview URL and claimable deployment link."
 source: "https://github.com/vercel-labs/agent-skills/tree/main/skills/claude.ai/vercel-deploy-claimable"
 risk: safe
 ---
@@ -12,6 +12,7 @@ Deploy any project to Vercel instantly. No authentication required.
 ## When to Use This Skill
 
 Use this skill when:
+
 - User requests deployment actions like "Deploy my app"
 - Deploying to production
 - Creating preview deployments
@@ -32,6 +33,7 @@ bash /mnt/skills/user/vercel-deploy/scripts/deploy.sh [path]
 ```
 
 **Arguments:**
+
 - `path` - Directory to deploy, or a `.tgz` file (defaults to current directory)
 
 **Examples:**
@@ -88,6 +90,7 @@ For static HTML projects (no `package.json`), framework is set to `null`.
 ## Static HTML Projects
 
 For projects without a `package.json`:
+
 - If there's a single `.html` file not named `index.html`, it gets renamed automatically
 - This ensures the page is served at the root URL (`/`)
 

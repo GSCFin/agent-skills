@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const {
-  listSkillIds,
+  listSkillIdsRecursive,
   readSkill,
   tokenize,
   unique,
@@ -297,8 +297,8 @@ function renderCatalogMarkdown(catalog) {
 }
 
 function buildCatalog() {
-  const skillIds = listSkillIds(SKILLS_DIR);
-  const skills = skillIds.map(skillId => readSkill(SKILLS_DIR, skillId));
+  const skillRelPaths = listSkillIdsRecursive(SKILLS_DIR);
+  const skills = skillRelPaths.map(relPath => readSkill(SKILLS_DIR, relPath));
   const catalogSkills = [];
 
   for (const skill of skills) {

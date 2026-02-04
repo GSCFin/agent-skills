@@ -1,4 +1,6 @@
 node_modules/
+__pycache__/
+.worktrees/
 
 walkthrough.md
 .agent/rules/
@@ -29,5 +31,9 @@ scripts/*voltagent*.py
 scripts/*html*.py
 scripts/*similar*.py
 scripts/*count*.py
+
+# Platform-specific
 .DS_Store
 
+# Optional baseline for legacy JS validator (scripts/validate-skills.js)
+validation-baseline.json

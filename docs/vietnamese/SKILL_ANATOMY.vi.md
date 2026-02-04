@@ -73,7 +73,7 @@ Một số skill bao gồm thêm siêu dữ liệu bổ sung:
 ---
 name: my-skill-name
 description: "Mô tả ngắn"
-risk: "safe" # safe | risk | official
+risk: "safe" # none | safe | critical | offensive (xem QUALITY_BAR.md)
 source: "community"
 tags: ["react", "typescript"]
 ---

@@ -8,6 +8,8 @@ const SKILLS_DIR = path.join(ROOT, 'skills');
 const ALLOWED_FIELDS = new Set([
   'name',
   'description',
+  'risk',
+  'source',
   'license',
   'compatibility',
   'metadata',

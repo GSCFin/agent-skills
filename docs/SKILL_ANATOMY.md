@@ -73,7 +73,7 @@ Some skills include additional metadata:
 ---
 name: my-skill-name
 description: "Brief description"
-risk: "safe" # safe | risk | official
+risk: "safe" # none | safe | critical | offensive (see QUALITY_BAR.md)
 source: "community"
 tags: ["react", "typescript"]
 ---

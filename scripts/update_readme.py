@@ -36,7 +36,7 @@ def update_readme():
 
     # 3. Update Intro Text Count
     content = re.sub(
-        r"(library of \*\*)\d+( high-performance skills\*\*)",
+        r"(library of \*\*)\d+( high-performance agentic skills\*\*)",
         rf"\g<1>{total_skills}\g<2>",
         content,
     )

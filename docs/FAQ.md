@@ -76,6 +76,7 @@ git clone https://github.com/sickn33/antigravity-awesome-skills.git .agent/skill
 
 - Claude Code: `.claude/skills/`
 - Gemini CLI: `.gemini/skills/`
+- Codex CLI: `.codex/skills/`
 - Cursor: `.cursor/skills/` or project root
 
 ### Does this work with Windows?

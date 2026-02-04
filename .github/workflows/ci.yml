@@ -45,6 +45,13 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
+      - name: Audit npm dependencies
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Run tests
+        run: npm run test
+
       - name: 📦 Build catalog
         run: npm run catalog
 
@@ -60,6 +67,9 @@ jobs:
         run: |
           # If no changes, exit successfully
           git diff --quiet && exit 0
+
+          # Pull with rebase to integrate remote changes
+          git pull origin main --rebase || true
 
           git add README.md skills_index.json data/catalog.json data/bundles.json data/aliases.json CATALOG.md || true
 

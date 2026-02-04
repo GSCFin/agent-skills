@@ -21,6 +21,7 @@ The skill MUST have a section explicitly stating when to trigger it.
 
 - **Good**: "Use when the user asks to debug a React component."
 - **Bad**: "This skill helps you with code."
+Accepted headings: `## When to Use`, `## Use this skill when`, `## When to Use This Skill`.
 
 ### 3. Safety & Risk Classification
 

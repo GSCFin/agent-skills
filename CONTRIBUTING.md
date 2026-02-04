@@ -48,6 +48,23 @@ You don't need to be an expert! Here are ways anyone can help:
 
 ---
 
+## Local development setup
+
+To run validation, index generation, and README updates locally:
+
+1. **Node.js** (for catalog and installer): `npm ci`
+2. **Python 3** (for validate, index, readme scripts): install dependencies with
+   ```bash
+   pip install -r requirements.txt
+   ```
+   Then you can run `npm run chain` (validate → index → readme) and `npm run catalog`.
+
+**Validation:** The canonical validator is **Python** (`scripts/validate_skills.py`). Use `npm run validate` (or `npm run validate:strict` for CI-style checks). The JavaScript validator (`scripts/validate-skills.js`) is legacy/optional and uses a different schema; CI and PR checks rely on the Python validator only.
+
+**npm audit:** CI runs `npm audit --audit-level=high`. To fix issues locally: run `npm audit`, then `npm update` or `npm audit fix` as appropriate; for breaking changes, update dependencies manually and run tests.
+
+---
+
 ## How to Create a New Skill
 
 ### Step-by-Step Guide
