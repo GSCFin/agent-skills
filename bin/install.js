@@ -98,18 +98,38 @@ Examples:
 `);
 }
 
-function copyRecursiveSync(src, dest) {
+function copyRecursiveSync(src, dest, skipGit = true) {
   const stats = fs.statSync(src);
   if (stats.isDirectory()) {
     if (!fs.existsSync(dest)) {
       fs.mkdirSync(dest, { recursive: true });
     }
     fs.readdirSync(src).forEach((child) => {
-      if (child === ".git") return;
-      copyRecursiveSync(path.join(src, child), path.join(dest, child));
+      if (skipGit && child === ".git") return;
+      copyRecursiveSync(path.join(src, child), path.join(dest, child), skipGit);
     });
   } else {
     fs.copyFileSync(src, dest);
+  }
+}
+
+/** Copy contents of repo's skills/ into target so each skill is target/skill-name/ (for Claude Code etc.). */
+function installSkillsIntoTarget(tempDir, target) {
+  const repoSkills = path.join(tempDir, "skills");
+  if (!fs.existsSync(repoSkills)) {
+    console.error("Cloned repo has no skills/ directory.");
+    process.exit(1);
+  }
+  fs.readdirSync(repoSkills).forEach((name) => {
+    const src = path.join(repoSkills, name);
+    const dest = path.join(target, name);
+    copyRecursiveSync(src, dest);
+  });
+  const repoDocs = path.join(tempDir, "docs");
+  if (fs.existsSync(repoDocs)) {
+    const docsDest = path.join(target, "docs");
+    if (!fs.existsSync(docsDest)) fs.mkdirSync(docsDest, { recursive: true });
+    copyRecursiveSync(repoDocs, docsDest);
   }
 }
 
@@ -135,98 +155,86 @@ function main() {
     process.exit(1);
   }
 
-  if (fs.existsSync(target)) {
-    const gitDir = path.join(target, ".git");
-    if (fs.existsSync(gitDir)) {
-      console.log("Directory already exists and is a git repo. Updating…");
-      process.chdir(target);
-      run("git", ["pull"]);
-      return;
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ag-skills-"));
+  const originalCwd = process.cwd();
+
+  try {
+    if (process.platform === "win32") {
+      run("git", ["-c", "core.symlinks=true", "clone", REPO, tempDir]);
+    } else {
+      run("git", ["clone", REPO, tempDir]);
     }
 
-    console.log(`Directory exists: ${target}`);
-    console.log("Cloning to temporary directory to merge...");
+    const ref =
+      tagArg ||
+      (versionArg
+        ? versionArg.startsWith("v")
+          ? versionArg
+          : `v${versionArg}`
+        : null);
+    if (ref) {
+      console.log(`Checking out ${ref}…`);
+      process.chdir(tempDir);
+      run("git", ["checkout", ref]);
+      process.chdir(originalCwd);
+    }
 
-    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ag-skills-"));
-    const originalCwd = process.cwd();
-
-    try {
-      if (process.platform === "win32") {
-        run("git", ["-c", "core.symlinks=true", "clone", REPO, tempDir]);
-      } else {
-        run("git", ["clone", REPO, tempDir]);
-      }
-
-      const ref =
-        tagArg ||
-        (versionArg
-          ? versionArg.startsWith("v")
-            ? versionArg
-            : `v${versionArg}`
-          : null);
-      if (ref) {
-        console.log(`Checking out ${ref}…`);
-        process.chdir(tempDir);
-        run("git", ["checkout", ref]);
-        process.chdir(originalCwd);
-      }
-
-      console.log(`Copying files to ${target}...`);
-      copyRecursiveSync(tempDir, target);
-
-      console.log(`\nMerged skills into ${target}`);
-      console.log(
-        "Pick a bundle in docs/BUNDLES.md and use @skill-name in your AI assistant.",
-      );
-    } finally {
-      try {
-        if (fs.existsSync(tempDir)) {
-          if (fs.rmSync) {
-            fs.rmSync(tempDir, { recursive: true, force: true });
+    if (fs.existsSync(target)) {
+      const gitDir = path.join(target, ".git");
+      if (fs.existsSync(gitDir)) {
+        console.log("Migrating from full-repo install to skills-only layout…");
+        const entries = fs.readdirSync(target);
+        for (const name of entries) {
+          const full = path.join(target, name);
+          const stat = fs.statSync(full);
+          if (stat.isDirectory()) {
+            if (fs.rmSync) {
+              fs.rmSync(full, { recursive: true, force: true });
+            } else {
+              fs.rmdirSync(full, { recursive: true });
+            }
           } else {
-            fs.rmdirSync(tempDir, { recursive: true });
+            fs.unlinkSync(full);
           }
         }
-      } catch (e) {
-        // ignore cleanup errors
+      } else {
+        console.log(`Updating existing install at ${target}…`);
       }
+    } else {
+      const parent = path.dirname(target);
+      if (!fs.existsSync(parent)) {
+        try {
+          fs.mkdirSync(parent, { recursive: true });
+        } catch (e) {
+          console.error(
+            `Cannot create parent directory: ${parent}`,
+            e.message,
+          );
+          process.exit(1);
+        }
+      }
+      fs.mkdirSync(target, { recursive: true });
     }
-    return;
-  }
 
-  const parent = path.dirname(target);
-  if (!fs.existsSync(parent)) {
+    installSkillsIntoTarget(tempDir, target);
+
+    console.log(`\nInstalled to ${target}`);
+    console.log(
+      "Pick a bundle in docs/BUNDLES.md and use @skill-name in your AI assistant.",
+    );
+  } finally {
     try {
-      fs.mkdirSync(parent, { recursive: true });
+      if (fs.existsSync(tempDir)) {
+        if (fs.rmSync) {
+          fs.rmSync(tempDir, { recursive: true, force: true });
+        } else {
+          fs.rmdirSync(tempDir, { recursive: true });
+        }
+      }
     } catch (e) {
-      console.error(`Cannot create parent directory: ${parent}`, e.message);
-      process.exit(1);
+      // ignore cleanup errors
     }
   }
-
-  if (process.platform === "win32") {
-    run("git", ["-c", "core.symlinks=true", "clone", REPO, target]);
-  } else {
-    run("git", ["clone", REPO, target]);
-  }
-
-  const ref =
-    tagArg ||
-    (versionArg
-      ? versionArg.startsWith("v")
-        ? versionArg
-        : `v${versionArg}`
-      : null);
-  if (ref) {
-    console.log(`Checking out ${ref}…`);
-    process.chdir(target);
-    run("git", ["checkout", ref]);
-  }
-
-  console.log(`\nInstalled to ${target}`);
-  console.log(
-    "Pick a bundle in docs/BUNDLES.md and use @skill-name in your AI assistant.",
-  );
 }
 
 main();
