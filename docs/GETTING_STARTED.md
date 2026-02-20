@@ -2,6 +2,8 @@
 
 **New here? This guide will help you supercharge your AI Agent in 5 minutes.**
 
+> **💡 Confused about what to do after installation?** Check out the [**Complete Usage Guide**](USAGE.md) for detailed explanations and examples!
+
 ---
 
 ## 🤔 What Are "Skills"?
@@ -15,7 +17,7 @@ AI Agents (like **Claude Code**, **Gemini**, **Cursor**) are smart, but they lac
 
 ## ⚡️ Quick Start: The "Starter Packs"
 
-Don't panic about the 626+ skills. You don't need them all at once.
+Don't panic about the 700+ skills. You don't need them all at once.
 We have curated **Starter Packs** to get you running immediately.
 
 You **install the full repo once** (npx or clone); Starter Packs are curated lists to help you **pick which skills to use** by role (e.g. Web Wizard, Hacker Pack)—they are not a different way to install.
@@ -49,6 +51,21 @@ Find the bundle that matches your role (see [BUNDLES.md](BUNDLES.md)):
 | **Security Engineer** | `Hacker Pack`  | OWASP, Metasploit, Pentest Methodology            |
 | **Manager / PM**      | `Product Pack` | Brainstorming, Planning, SEO, Strategy            |
 | **Everything**        | `Essentials`   | Clean Code, Planning, Validation (The Basics)     |
+
+---
+
+## 🧭 Bundles vs Workflows
+
+Bundles and workflows solve different problems:
+
+- **Bundles** = curated sets by role (what to pick).
+- **Workflows** = step-by-step playbooks (how to execute).
+
+Start with bundles in [BUNDLES.md](BUNDLES.md), then run a workflow from [WORKFLOWS.md](WORKFLOWS.md) when you need guided execution.
+
+Example:
+
+> "Use **@antigravity-workflows** and run `ship-saas-mvp` for my project idea."
 
 ---
 
@@ -103,7 +120,7 @@ _Check the [Skill Catalog](../CATALOG.md) for the full list._
 
 ## ❓ FAQ
 
-**Q: Do I need to install all 626 skills?**
+**Q: Do I need to install all 700+ skills?**
 A: You clone the whole repo once; your AI only _reads_ the skills you invoke (or that are relevant), so it stays lightweight. **Starter Packs** in [BUNDLES.md](BUNDLES.md) are curated lists to help you discover the right skills for your role—they don't change how you install.
 
 **Q: Can I make my own skills?**

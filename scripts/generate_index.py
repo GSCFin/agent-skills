@@ -6,14 +6,34 @@ import yaml
 
 def parse_frontmatter(content):
     """
-    Parses YAML frontmatter using PyYAML for standard compliance.
+    Parses YAML frontmatter, sanitizing unquoted values containing @.
+    Handles single values and comma-separated lists by quoting the entire line.
     """
     fm_match = re.search(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
     if not fm_match:
         return {}
     
+    yaml_text = fm_match.group(1)
+    
+    # Process line by line to handle values containing @ and commas
+    sanitized_lines = []
+    for line in yaml_text.splitlines():
+        # Match "key: value" (handles keys with dashes like 'package-name')
+        match = re.match(r'^(\s*[\w-]+):\s*(.*)$', line)
+        if match:
+            key, val = match.groups()
+            val_s = val.strip()
+            # If value contains @ and isn't already quoted, wrap the whole string in double quotes
+            if '@' in val_s and not (val_s.startswith('"') or val_s.startswith("'")):
+                # Escape any existing double quotes within the value string
+                safe_val = val_s.replace('"', '\\"')
+                line = f'{key}: "{safe_val}"'
+        sanitized_lines.append(line)
+    
+    sanitized_yaml = '\n'.join(sanitized_lines)
+    
     try:
-        return yaml.safe_load(fm_match.group(1)) or {}
+        return yaml.safe_load(sanitized_yaml) or {}
     except yaml.YAMLError as e:
         print(f"⚠️ YAML parsing error: {e}")
         return {}

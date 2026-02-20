@@ -1,4 +1,4 @@
-# 🛠️ Repository Maintenance Guide (V4)
+# 🛠️ Repository Maintenance Guide (V5)
 
 > **"If it's not documented, it's broken."**
 
@@ -145,6 +145,24 @@ Locations to check:
 - **Antigravity Badge**: Must point to `https://github.com/sickn33/antigravity-awesome-skills`, NOT `anthropics/antigravity`.
 - **License**: Ensure the link points to `LICENSE` file.
 
+### F. Workflows Consistency (NEW in V5)
+
+If you touch any Workflows-related artifact, keep all workflow surfaces in sync:
+
+1. `docs/WORKFLOWS.md` (human-readable playbooks)
+2. `data/workflows.json` (machine-readable schema)
+3. `skills/antigravity-workflows/SKILL.md` (orchestration entrypoint)
+
+Rules:
+
+- Every workflow id referenced in docs must exist in `data/workflows.json`.
+- If you add/remove a workflow step category, update prompt examples accordingly.
+- If a workflow references optional skills not yet merged (example: `go-playwright`), mark them explicitly as **optional** in docs.
+- If workflow onboarding text is changed, update the docs trinity:
+  - `README.md`
+  - `docs/GETTING_STARTED.md`
+  - `docs/FAQ.md`
+
 ---
 
 ## 3. 🛡️ Governance & Quality Bar
@@ -197,6 +215,10 @@ When cutting a new version (e.g., V4):
       ```
       You cannot republish the same version; always bump `package.json` before publishing.
     - **Option B (CI):** On GitHub, create a **Release** (tag e.g. `v4.6.1`). The workflow [Publish to npm](.github/workflows/publish-npm.yml) runs on **Release published** and runs `npm publish` if the repo secret `NPM_TOKEN` is set (npm → Access Tokens → Granular token with Publish, then add as repo secret `NPM_TOKEN`).
+
+6.  **Close linked issue(s)**:
+    - If the release completes an issue scope (feature/fix), close it with `gh issue close <id> --comment "..."`
+    - Include release tag reference in the closing note when applicable.
 
 ### 📋 Changelog Entry Template
 

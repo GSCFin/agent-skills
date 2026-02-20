@@ -327,6 +327,19 @@ _For system design and technical decisions._
 - [`event-sourcing-architect`](../skills/event-sourcing-architect/): Event sourcing and CQRS.
 - [`architecture-decision-records`](../skills/architecture-decision-records/): Document technical decisions.
 
+### 🧱 The "DDD & Evented Architecture" Pack
+
+_For teams modeling complex domains and evolving toward evented systems._
+
+- [`domain-driven-design`](../skills/domain-driven-design/): Route DDD work from strategic modeling to implementation patterns.
+- [`ddd-strategic-design`](../skills/ddd-strategic-design/): Subdomains, bounded contexts, and ubiquitous language.
+- [`ddd-context-mapping`](../skills/ddd-context-mapping/): Cross-context integration and anti-corruption boundaries.
+- [`ddd-tactical-patterns`](../skills/ddd-tactical-patterns/): Aggregates, value objects, repositories, and domain events.
+- [`cqrs-implementation`](../skills/cqrs-implementation/): Read/write model separation.
+- [`event-store-design`](../skills/event-store-design/): Event persistence and replay architecture.
+- [`saga-orchestration`](../skills/saga-orchestration/): Cross-context long-running transaction coordination.
+- [`projection-patterns`](../skills/projection-patterns/): Materialized read models from event streams.
+
 ---
 
 ## 🧰 Maintainer & OSS
