@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 882
+Total skills: 883
 
 ## architecture (69)
 
@@ -309,12 +309,13 @@ Use when creating container-based agents that run custom code in Azure ... | hos
 | `xlsx-official` | Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work ... | xlsx, official | xlsx, official, spreadsheet, creation, editing, analysis, formulas, formatting, data, visualization, claude, work |
 | `youtube-automation` | Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Always search tools firs... | youtube | youtube, automation, automate, tasks, via, rube, mcp, composio, upload, videos, playlists, search |
 
-## development (136)
+## development (137)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
 | `3d-web-experience` | Expert in building 3D experiences for the web - Three.js, React Three Fiber, Spline, WebGL, and interactive 3D scenes. Covers product configurators, 3D portf... | 3d, web, experience | 3d, web, experience, building, experiences, three, js, react, fiber, spline, webgl, interactive |
 | `abcjs` | Skill for writing ABC Notation (v2.1 standard) and using the abcjs JavaScript library to render sheet music in web applications. Use when writing ABC notatio... | abcjs | abcjs, skill, writing, abc, notation, v2, standard, javascript, library, render, sheet, music |
+| `agenticse-design-system` | Design System engineering utilizing HTML-as-Design-Tool workflow. Handles components, composite layouts, robust state matrix planning (Default/Empty/Error), ... | agenticse | agenticse, engineering, utilizing, html, components, composite, layouts, robust, state, matrix, planning, default |
 | `algolia-search` | Expert patterns for Algolia search implementation, indexing strategies, React InstantSearch, and relevance tuning Use when: adding search to, algolia, instan... | algolia, search | algolia, search, indexing, react, instantsearch, relevance, tuning, adding, api, functionality |
 | `api-design-principles` | Master REST and GraphQL API design principles to build intuitive, scalable, and maintainable APIs that delight developers. Use when designing new APIs, revie... | api, principles | api, principles, rest, graphql, intuitive, scalable, maintainable, apis, delight, developers, designing, new |
 | `api-documentation-generator` | Generate comprehensive, developer-friendly API documentation from code, including endpoints, parameters, examples, and best practices | api, documentation, generator | api, documentation, generator, generate, developer, friendly, code, including, endpoints, parameters, examples |

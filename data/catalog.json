@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 882,
+  "total": 883,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -435,6 +435,30 @@
         "coding"
       ],
       "path": "skills/agentic-gsafe-beads-mem/SKILL.md"
+    },
+    {
+      "id": "agenticse-design-system",
+      "name": "agenticse-design-system",
+      "description": "Design System engineering utilizing HTML-as-Design-Tool workflow. Handles components, composite layouts, robust state matrix planning (Default/Empty/Error), and storyboard interactive demos across Web and 2D Mobile App platforms. Triggers on requests to build 2D UIs, Mobile Apps, fix A11y, resolve style drifts, or maintain the Design System Hub showcasing tokens and layouts.",
+      "category": "development",
+      "tags": [
+        "agenticse"
+      ],
+      "triggers": [
+        "agenticse",
+        "engineering",
+        "utilizing",
+        "html",
+        "components",
+        "composite",
+        "layouts",
+        "robust",
+        "state",
+        "matrix",
+        "planning",
+        "default"
+      ],
+      "path": "skills/agenticse-design-system/SKILL.md"
     },
     {
       "id": "agenticse-gsafe-cass",
