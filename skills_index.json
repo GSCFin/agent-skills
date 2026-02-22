@@ -180,6 +180,15 @@
     "source": "self"
   },
   {
+    "id": "agenticse-design-system",
+    "path": "skills/agenticse-design-system",
+    "category": "uncategorized",
+    "name": "agenticse-design-system",
+    "description": "Design System engineering utilizing HTML-as-Design-Tool workflow. Handles components, composite layouts, robust state matrix planning (Default/Empty/Error), and storyboard interactive demos across Web and 2D Mobile App platforms. Triggers on requests to build 2D UIs, Mobile Apps, fix A11y, resolve style drifts, or maintain the Design System Hub showcasing tokens and layouts.",
+    "risk": "unknown",
+    "source": "unknown"
+  },
+  {
     "id": "agenticse-gsafe-cm",
     "path": "skills/agenticse-gsafe-cm",
     "category": "uncategorized",
