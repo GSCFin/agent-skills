@@ -2,13 +2,13 @@
 name: agenticse-gsafe
 description: >-
   Unified Agentic Software Engineering toolkit for AI coding agents. Combines
-  Beads (bd) task tracking, Beads Viewer (bv) graph intelligence, MCP Agent Mail
+  Beads Rust (br) task tracking, Beads Viewer (bv) graph intelligence, MCP Agent Mail
   multi-agent coordination, FastCode (fastcode) codebase intelligence, CASS (cass) cross-agent session search, and UBS (ubs)
   static bug scanning into one integrated workflow.
-  Triggers: gsafe, beads, bd, bv, agent mail, fastcode, query, codebase intelligence, cass, ubs, multi-agent, task tracker,
+  Triggers: gsafe, beads, br, bd, bv, agent mail, fastcode, query, codebase intelligence, cass, ubs, multi-agent, task tracker,
   quality gate, session search, agent memory, file reservation, bug scanner.
 license: MIT
-compatibility: Requires Beads (bd/bv), MCP Agent Mail server, FastCode, CASS, and UBS CLIs.
+compatibility: Requires Beads Rust (br/bv), MCP Agent Mail server, FastCode, CASS, and UBS CLIs.
 metadata:
   author: agenticse
   version: "1.0.0"
@@ -31,7 +31,7 @@ The G-SAFE (GSCfin Software Agent Framework for Engineering) skill gives AI codi
 
 | Tool             | CLI        | Purpose                                      | Key Command                     |
 | :--------------- | :--------- | :------------------------------------------- | :------------------------------ |
-| **Beads**        | `bd`       | Git-backed task tracker & agent memory       | `bd ready --json`               |
+| **Beads Rust**   | `br`       | SQLite+JSONL task tracker & agent memory     | `br ready --json`               |
 | **Beads Viewer** | `bv`       | Graph intelligence (PageRank, critical path) | `bv --robot-priority`           |
 | **Agent Mail**   | MCP tools  | Multi-agent messaging & file reservations    | `macro_start_session`           |
 | **FastCode**     | `fastcode` | Codebase intelligence & semantic search      | `fastcode --repo . query "<q>"` |
@@ -41,21 +41,21 @@ The G-SAFE (GSCfin Software Agent Framework for Engineering) skill gives AI codi
 ## Unified Session Workflow
 
 ```
-START ─→ bd ready --json          # What's unblocked?
+START ─→ br ready --json          # What's unblocked?
        → bv --robot-priority     # What has highest impact?
        → fastcode --repo . query "<task>" # Understand codebase context
        → cm context "<task>"     # Any relevant playbook rules?
        → reserve files (Agent Mail)
 
 WORK  ─→ implement & test
-       → bd create "found bug" --json  # Track discovered work
+       → br create "found bug" --json  # Track discovered work
        → ubs <files> --format=json     # Quality gate
 
 END   ─→ ubs <files> (final scan)
-       → bd close <id> --json
-       → bd sync → git pull → git push (MANDATORY)
+       → br close <id> --json
+       → br sync → git pull → git push (MANDATORY)
        → git stash clear → prune origin
-       → bd ready --json         # Handoff for next session
+       → br ready --json         # Handoff for next session
 ```
 
 ## Quick Reference by Phase
@@ -64,9 +64,9 @@ END   ─→ ubs <files> (final scan)
 
 | Action              | Command                         |
 | :------------------ | :------------------------------ |
-| Find unblocked work | `bd ready --json`               |
+| Find unblocked work | `br ready --json`               |
 | Smart priority      | `bv --robot-priority`           |
-| Claim a task        | `bd update <id> --claim --json` |
+| Claim a task        | `br update <id> --claim --json` |
 | Codebase Context    | `fastcode --repo . query "..."` |
 | Register agent      | `macro_start_session(...)`      |
 
@@ -74,8 +74,8 @@ END   ─→ ubs <files> (final scan)
 
 | Action        | Command                                        |
 | :------------ | :--------------------------------------------- |
-| Reserve files | `file_reservation_paths(..., reason="bd-###")` |
-| Send message  | `send_message(..., thread_id="bd-###")`        |
+| Reserve files | `file_reservation_paths(..., reason="br-###")` |
+| Send message  | `send_message(..., thread_id="br-###")`        |
 | Check inbox   | `fetch_inbox` or `resource://inbox/{Agent}`    |
 
 ### 3. Quality Gate (Pre-Commit)
@@ -90,8 +90,8 @@ END   ─→ ubs <files> (final scan)
 
 | Action        | Command                                    |
 | :------------ | :----------------------------------------- |
-| Close task    | `bd close <id> --reason "Done" --json`     |
-| Sync & Push   | `bd sync` → `git pull` → `git push`        |
+| Close task    | `br close <id> --reason "Done" --json`     |
+| Sync & Push   | `br sync` → `git pull` → `git push`        |
 | Clean state   | `git stash clear; git remote prune origin` |
 | Release files | `release_file_reservations(...)`           |
 
@@ -103,7 +103,7 @@ END   ─→ ubs <files> (final scan)
 - [FastCode Codebase Intelligence](rules/analyze-codebase.md) — Fast semantic code search
 - [CASS Session Search](rules/cass-search.md) — Cross-agent search & token management
 - [UBS Quality Gate](rules/ubs-quality-gate.md) — Bug scanning, fix-verify loop, severity guide
-- [The Coordination Loop](rules/coordination-loop.md) — Unified bd→bv→am→ubs workflow
+- [The Coordination Loop](rules/coordination-loop.md) — Unified br→bv→am→ubs workflow
 
 ## Full Compiled Document
 

@@ -25,24 +25,24 @@ file_reservation_paths(
   paths=["src/components/**", "README.md"],
   ttl_seconds=3600,
   exclusive=true,
-  reason="bd-123"
+  reason="br-123"
 )
 ```
 
 ### Beads Linkage
 
-- **Mail `thread_id`** ↔ `bd-###` (Beads Issue ID)
-- **Mail subject**: `[bd-###] Starting <title>`
-- **Reservation `reason`**: `bd-###`
+- **Mail `thread_id`** ↔ `br-###` (Beads Issue ID)
+- **Mail subject**: `[br-###] Starting <title>`
+- **Reservation `reason`**: `br-###`
 
 ## Workflow: The Beads + Mail Loop
 
 1. **Analyze & Pick**: `bv --robot-priority` → note Issue ID (e.g., `bd-123`)
-2. **Reserve Files**: `file_reservation_paths(..., reason="bd-123")`
-3. **Announce Start**: `send_message(thread_id="bd-123", subject="[bd-123] Starting...")`
+2. **Reserve Files**: `file_reservation_paths(..., reason="br-123")`
+3. **Announce Start**: `send_message(thread_id="br-123", subject="[bd-123] Starting...")`
 4. **Work**: Edit code, include `bd-123` in commits
 5. **Release**:
-   - `bd close bd-123 --reason "Completed"`
+   - `br close bd-123 --reason "Completed"`
    - `release_file_reservations(...)`
    - `bv --robot-diff` to see what you unblocked
    - Reply: `[bd-123] Completed`
@@ -80,7 +80,7 @@ To survive in the multi-agent Village, you MUST adhere to these prompt guideline
 - **Release early** — don't hold locks while idle
 - **Use TTL** — set reasonable expiry so locks expire on crash
 - **Handle conflicts** — if blocked, wait or check inbox for lock holder messages
-- **Always include `bd-###`** in the `reason` field
+- **Always include `br-###`** in the `reason` field
 
 ## Handling Messages
 

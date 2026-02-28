@@ -6,7 +6,7 @@ This is the full compiled document for the G-SAFE (GSCfin Software Agent Framewo
 
 ## 1. Installation & Setup
 
-### Beads (`bd` / `br`)
+### Beads (`br` / `bd`)
 
 **Note:** `br` is the blazing-fast Rust rewrite. The mental model is identical. Always use the `--json` flag to avoid terminal formatting bloat.
 
@@ -16,8 +16,8 @@ curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/insta
 # For br: cargo install --git https://github.com/steveyegge/beads_rust
 
 cd your-project
-bd init --quiet              # Non-interactive (for agents)
-bd init --stealth            # Local-only, no repo pollution
+br init --quiet              # Non-interactive (for agents)
+br init --stealth            # Local-only, no repo pollution
 ```
 
 ### Beads Viewer (Task Intelligence)
@@ -61,16 +61,16 @@ fastcode --repo . query "Where is X?"   # Semantic search
 
 **Context Injection:** Beads uses a universal CLI approach instead of Claude Skills (which add massive token overhead).
 
-- Run `bd prime` to instantly inject the full workflow context (~1-2k tokens) into your session.
+- Run `br prime` to instantly inject the full workflow context (~1-2k tokens) into your session.
 
 **Hooks Setup:**
 
 ```bash
-bd setup claude              # Install hooks globally
-bd setup claude --project    # Install for this project only
+br setup claude              # Install hooks globally
+br setup claude --project    # Install for this project only
 ```
 
-This automatically runs `bd prime` on SessionStart and PreCompact to keep your context fresh.
+This automatically runs `br prime` on SessionStart and PreCompact to keep your context fresh.
 
 ---
 
@@ -80,16 +80,16 @@ Every session begins with orientation:
 
 ```bash
 # Find unblocked work
-bd ready --json
+br ready --json
 
 # Or: find highest-impact task using graph intelligence
 bv --robot-priority
 
 # Review the chosen task
-bd show <id> --json
+br show <id> --json
 
 # Atomically claim it (prevents race conditions)
-bd update <id> --claim --json
+br update <id> --claim --json
 
 # Gather codebase context
 fastcode --repo . query "Where is the implementation for <task properties>?"
@@ -112,12 +112,12 @@ fetch_inbox
 
 ## 3. Task Selection & Intelligence
 
-### Simple Selection: `bd ready`
+### Simple Selection: `br ready`
 
 Returns all unblocked tasks, sorted by priority.
 
 ```bash
-bd ready --json
+br ready --json
 ```
 
 ### Smart Selection: Mathematical Routing
@@ -176,7 +176,7 @@ file_reservation_paths(
   paths=["src/components/**", "README.md"],
   ttl_seconds=3600,
   exclusive=true,           # Recommended
-  reason="bd-123"           # Always link to Beads issue
+  reason="br-123"           # Always link to Beads issue
 )
 ```
 
@@ -185,7 +185,7 @@ file_reservation_paths(
 ```bash
 # Announce work start
 send_message(
-  thread_id="bd-123",
+  thread_id="br-123",
   subject="[bd-123] Starting auth refactor",
   body="Reserving src/auth/**. ETA: 1 session."
 )
@@ -199,10 +199,10 @@ fetch_inbox
 
 All coordination uses the Beads Issue ID as the linking key:
 
-- Mail `thread_id` = `bd-###`
-- Mail subject = `[bd-###] ...`
-- Reservation `reason` = `bd-###`
-- Commit messages reference `bd-###`
+- Mail `thread_id` = `br-###`
+- Mail subject = `[br-###] ...`
+- Reservation `reason` = `br-###`
+- Commit messages reference `br-###`
 
 ### Extreme Coordination Guidelines (Actionable Prompts)
 
@@ -246,7 +246,7 @@ git commit -m "feat: add JWT validation (bd-123)"
 _"If you discover a side-quest or bug that takes more than 2 minutes to fix, do not get derailed. Create a new Bead for it using `discovered-from:<parent-id>`."_
 
 ```bash
-bd create "Memory leak in image loader" -t bug -p 1 \
+br create "Memory leak in image loader" -t bug -p 1 \
   --deps discovered-from:bd-100 --json
 ```
 
@@ -263,11 +263,11 @@ bd create "Memory leak in image loader" -t bug -p 1 \
 ### Epics & Dependencies
 
 ```bash
-bd create "Auth System" -t epic -p 1 --json              # → bd-a3f8e9
-bd create "Design login UI" -p 1 --parent bd-a3f8e9 --json
-bd dep add <child> <parent>
-bd dep tree <id>
-bd dep cycles
+br create "Auth System" -t epic -p 1 --json              # → bd-a3f8e9
+br create "Design login UI" -p 1 --parent bd-a3f8e9 --json
+br dep add <child> <parent>
+br dep tree <id>
+br dep cycles
 ```
 
 ### Decomposing Plans into Tasks
@@ -330,11 +330,11 @@ ubs --profile=loose     # Skip TODO/debug nits (prototyping)
 ubs $(git diff --name-only --cached) --format=json
 
 # 2. File remaining work & close completed work
-bd create "Follow-up work" -t task -p 2 --json
-bd close <id> --reason "Done" --json
+br create "Follow-up work" -t task -p 2 --json
+br close <id> --reason "Done" --json
 
 # 3. Sync to git (CRITICAL — not done until push succeeds)
-bd sync
+br sync
 # For br/strict compliance:
 git add .beads/ && git commit -m "Update beads state"
 
@@ -354,8 +354,8 @@ bv --robot-diff
 send_message(thread_id="<id>", subject="[<id>] Completed")
 
 # 7. Generate handoff for next session
-bd ready --json
-bd show <next-id> --json
+br ready --json
+br show <next-id> --json
 ```
 
 **Generate Prompt for User:**
@@ -418,7 +418,7 @@ Token budget flags: `--fields minimal`, `--max-tokens 2000`, `--limit N`
 bd admin cleanup --older-than 7 --force --json
 bd admin compact --analyze --json
 bd doctor --fix
-bd sync
+br sync
 ```
 
 Start cleaning at ~200 issues. Never exceed ~500.
@@ -450,7 +450,7 @@ bd stale --days 30 --json
 
 ## Honest Gaps
 
-- Agents don't proactively use Beads — prompt "check bd ready" or "track this in beads"
+- Agents don't proactively use Beads — prompt "check br ready" or "track this in beads"
 - AGENTS.md instructions fade by session end — prompt "land the plane" explicitly
 - Context rot happens in long sessions — fix with shorter sessions
 - Collaboration requires explicit sync branch setup for protected branches

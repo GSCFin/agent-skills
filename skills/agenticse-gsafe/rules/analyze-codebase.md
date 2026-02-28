@@ -16,7 +16,7 @@ While CASS searches _past agent sessions_, **FastCode** searches the _actual cod
    ```
 
 2. **Session Start (Context Gathering)**
-   After claiming a task via `bd update <id> --claim --json`, the agent should immediately gather technical context:
+   After claiming a task via `br update <id> --claim --json`, the agent should immediately gather technical context:
 
    ```bash
    fastcode --repo . query "Where is the implementation for [task feature]?"

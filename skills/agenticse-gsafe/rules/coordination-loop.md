@@ -1,7 +1,7 @@
 # The Coordination Loop
 
 This document describes the unified workflow that ties all G-SAFE tools together:
-**Beads (`bd`) → Beads Viewer (`bv`) → Agent Mail → UBS (`ubs`) → CASS (`cass`)**
+**Beads (`br`) → Beads Viewer (`bv`) → Agent Mail → UBS (`ubs`) → CASS (`cass`)**
 
 ## The Full Loop
 
@@ -12,11 +12,11 @@ This document describes the unified workflow that ties all G-SAFE tools together
 macro_start_session(project_key="<repo>", agent_name="<identity>")
 
 # 2. Find work — two options:
-bd ready --json                    # Simple: what's unblocked?
+br ready --json                    # Simple: what's unblocked?
 bv --robot-priority               # Smart: what has highest impact?
 
 # 3. Claim the task
-bd update <id> --claim --json      # Atomic — fails if already claimed
+br update <id> --claim --json      # Atomic — fails if already claimed
 
 # 4. Search for prior art & Codebase context
 fastcode --repo . query "Where is the code for <task keywords>?"
@@ -46,7 +46,7 @@ send_message(thread_id="<id>", subject="[<id>] Starting <title>")
 # 8. Implement, test, commit — reference <id> in commit messages
 
 # 9. Track discovered work
-bd create "Found edge case" -t bug -p 1 --deps discovered-from:<id> --json
+br create "Found edge case" -t bug -p 1 --deps discovered-from:<id> --json
 
 # 10. Quality gate (on each significant change)
 ubs <changed-files> --format=json
@@ -62,11 +62,11 @@ ubs <changed-files> --format=json
 ubs $(git diff --name-only --cached) --format=json
 
 # 12. File remaining work & close the task
-bd create "Follow-up task" -t task -p 2 --json
-bd close <id> --reason "Completed" --json
+br create "Follow-up task" -t task -p 2 --json
+br close <id> --reason "Completed" --json
 
 # 13. Sync & push (CRITICAL)
-bd sync
+br sync
 git pull --rebase
 git push                           # MUST SUCCEED
 git status                         # MUST show "up to date"
@@ -83,8 +83,8 @@ bv --robot-diff
 send_message(thread_id="<id>", subject="[<id>] Completed")
 
 # 17. Generate handoff & provide user prompt
-bd ready --json
-bd show <next-id> --json
+br ready --json
+br show <next-id> --json
 # Prompt user: "Continue work on bd-X: [title]. [Context]"
 ```
 
@@ -93,16 +93,16 @@ bd show <next-id> --json
 When working alone, skip Agent Mail steps (register, reserve, announce, release):
 
 ```bash
-bd ready --json → bd update <id> --claim --json → WORK
-→ ubs <files> --format=json → bd close <id> --json
-→ bd sync && git push → bd ready --json
+br ready --json → br update <id> --claim --json → WORK
+→ ubs <files> --format=json → br close <id> --json
+→ br sync && git push → br ready --json
 ```
 
 ## Multi-Agent Scaling: The Agent Village
 
 1. **Plan**: Create detailed plan externally
 2. **Scaffold**: Generate directory structure
-3. **Task**: Agent files Beads epics with `bd create ... --parent <epic>`
+3. **Task**: Agent files Beads epics with `br create ... --parent <epic>`
 4. **Swarm**: Launch multiple agents, each:
    - Registers with Agent Mail
    - Checks `bv --robot-priority` for work
@@ -112,9 +112,9 @@ bd ready --json → bd update <id> --claim --json → WORK
 ## Cross-Tool Integration Map
 
 ```
-┌─────────┐     thread_id = bd-###     ┌────────────┐
+┌─────────┐     thread_id = br-###     ┌────────────┐
 │  Beads  │◄──────────────────────────►│ Agent Mail │
-│  (bd)   │     reason = bd-###        │  (MCP)     │
+│  (bd)   │     reason = br-###        │  (MCP)     │
 └────┬────┘                            └─────┬──────┘
      │ issues                                │ reserved files
      ▼                                       ▼

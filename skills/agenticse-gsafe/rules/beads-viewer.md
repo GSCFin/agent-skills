@@ -1,8 +1,8 @@
 # Beads Viewer Intelligence
 
-Beads Viewer (`bv`) is a graph-aware TUI and CLI for the Beads issue tracker. While `bd` handles task **operations** (create, close, sync), `bv` provides task **intelligence** — graph metrics, dependency analysis, and AI-ready insights.
+Beads Viewer (`bv`) is a graph-aware TUI and CLI for the Beads issue tracker. While `br` handles task **operations** (create, close, sync), `bv` provides task **intelligence** — graph metrics, dependency analysis, and AI-ready insights.
 
-**Rule of thumb:** Use `bd` for task operations, use `bv` for task intelligence.
+**Rule of thumb:** Use `br` for task operations, use `bv` for task intelligence.
 
 ## Key Commands (Robot Mode)
 
@@ -42,12 +42,12 @@ The system calculates the **PageRank** and **Betweenness Centrality** of all tas
 | **Eigenvector**   | Influence in the dependency graph                        | High = important in overall structure        |
 | **K-Core**        | Membership in densely connected subgraphs                | Identifies tightly coupled task clusters     |
 
-## `bd` vs `bv` Decision Table
+## `br` vs `bv` Decision Table
 
 | Need                                | Use                    |
 | :---------------------------------- | :--------------------- |
-| Create/update/close a task          | `bd`                   |
-| See what's ready (simple list)      | `bd ready --json`      |
+| Create/update/close a task          | `br`                   |
+| See what's ready (simple list)      | `br ready --json`      |
 | Find the **highest-impact** task    | `bv --robot-priority`  |
 | Analyze dependencies & bottlenecks  | `bv --robot-insights`  |
 | Calculate blast radius for planning | `bv --robot-plan <id>` |

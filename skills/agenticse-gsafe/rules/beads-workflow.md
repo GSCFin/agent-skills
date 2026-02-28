@@ -1,8 +1,8 @@
 # Beads Workflow
 
-Beads (`bd`) is a git-backed graph issue tracker for AI coding agents. It solves the **"Dementia Problem"** — agents losing memory between sessions — by storing structured, queryable, dependency-aware issues as JSONL in git.
+Beads (`br`) is a git-backed graph issue tracker for AI coding agents. It solves the **"Dementia Problem"** — agents losing memory between sessions — by storing structured, queryable, dependency-aware issues as JSONL in git.
 
-**Mental model:** `bd create` writes to local SQLite, auto-exports to `.beads/issues.jsonl` (git-tracked). Git IS the database. No central server needed.
+**Mental model:** `br create` writes to local SQLite, auto-exports to `.beads/issues.jsonl` (git-tracked). Git IS the database. No central server needed.
 
 **Positioning:** Beads is an **execution tool**, not a planning tool. It tracks this week's work, not distant backlogs.
 
@@ -10,26 +10,26 @@ Beads (`bd`) is a git-backed graph issue tracker for AI coding agents. It solves
 
 ```bash
 # ── START ──
-bd ready --json                        # Find unblocked work
-bd show <id> --json                    # Review before starting
-bd update <id> --claim --json          # Atomically claim it
+br ready --json                        # Find unblocked work
+br show <id> --json                    # Review before starting
+br update <id> --claim --json          # Atomically claim it
 
 # ── WORK ──
 # Implement, test, commit as normal
 # THE 2-MINUTE RULE:
 # "If you discover a side-quest or bug that takes more than 2 minutes to fix,
 # do not get derailed. Create a new Bead for it using discovered-from."
-bd create "Found edge case" -t bug -p 1 --deps discovered-from:<id> --json
+br create "Found edge case" -t bug -p 1 --deps discovered-from:<id> --json
 
 # ── END ("Land the Plane") ──
 # MANDATORY: The plane is NOT landed until git push succeeds!
 # 1. File remaining work for follow-up
-bd create "Add edge case tests" -t task -p 2 --json
+br create "Add edge case tests" -t task -p 2 --json
 # 2. Quality gates (e.g., ubs scan)
 # 3. Close completed work
-bd close <id> --reason "Done" --json
+br close <id> --reason "Done" --json
 # 4. Sync & Push (NON-NEGOTIABLE)
-bd sync
+br sync
 # Ensure Git Compliance for beads updates:
 git add .beads/ && git commit -m "Update beads"
 
@@ -41,8 +41,8 @@ git stash clear
 git remote prune origin
 git status                   # Verify clean working tree
 # 6. Generate handoff for next session
-bd ready --json
-bd show <next-id> --json
+br ready --json
+br show <next-id> --json
 ```
 
 **CRITICAL RULES for Landing the Plane:**
@@ -55,14 +55,14 @@ bd show <next-id> --json
 ## Issue Creation
 
 ```bash
-bd create "Fix auth bug" -t bug -p 1 --json
-bd create "Add dark mode" -t feature -p 2 -d "Toggle in settings" --json
-bd create "Complex feature" --body-file=description.md -p 1 --json
-bd create -f feature-plan.md --json    # Batch from markdown
+br create "Fix auth bug" -t bug -p 1 --json
+br create "Add dark mode" -t feature -p 2 -d "Toggle in settings" --json
+br create "Complex feature" --body-file=description.md -p 1 --json
+br create -f feature-plan.md --json    # Batch from markdown
 ```
 
 **Always use `--json`** — never parse human-readable output with regex.
-**DO NOT use `bd edit`** — it opens `$EDITOR` (interactive). Use `bd update <id> --description "..."`.
+**DO NOT use `br edit`** — it opens `$EDITOR` (interactive). Use `br update <id> --description "..."`.
 
 ### Issue Types & Priorities
 
@@ -77,14 +77,14 @@ bd create -f feature-plan.md --json    # Batch from markdown
 ## Epics & Dependencies
 
 ```bash
-bd create "Auth System" -t epic -p 1 --json              # → bd-a3f8e9
-bd create "Design login UI" -p 1 --parent bd-a3f8e9 --json
-bd dep add <child> <parent>            # Add blocking dependency
-bd dep tree <id>                       # View dependency tree
-bd dep cycles                          # Detect circular deps
+br create "Auth System" -t epic -p 1 --json              # → br-a3f8e9
+br create "Design login UI" -p 1 --parent br-a3f8e9 --json
+br dep add <child> <parent>            # Add blocking dependency
+br dep tree <id>                       # View dependency tree
+br dep cycles                          # Detect circular deps
 ```
 
-| Dep Type          | Affects `bd ready`? | Purpose         |
+| Dep Type          | Affects `br ready`? | Purpose         |
 | :---------------- | :------------------ | :-------------- |
 | `blocks`          | **Yes**             | Hard dependency |
 | `parent-child`    | **Yes**             | Epic/subtask    |
@@ -139,5 +139,5 @@ bd list --json | jq '.[] | select(.source_repo == ".")'
 bd admin cleanup --older-than 7 --force --json
 bd admin compact --analyze --json
 bd doctor --fix
-bd sync
+br sync
 ```
