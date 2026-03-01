@@ -25,7 +25,7 @@ YELLOW = '\033[0;33m'
 CYAN = '\033[0;36m'
 NC = '\033[0m'
 
-BORDER_CHARS = set('│┌┐└┘├┤┬┴┼▼▲◄►v^')
+BORDER_CHARS = set('│┌┐└┘├┤┬┴┼▼▲◄►')
 LEFT_BORDER = set('│├┌└')
 RIGHT_BORDER = set('│┤┐┘')
 
@@ -123,8 +123,8 @@ def find_inner_box_groups(box):
     for ln, txt in content:
         inner = txt[1:] if txt and txt[0] in LEFT_BORDER else txt
 
-        has_top = '┌' in inner or '┬' in inner
-        has_bottom = '└' in inner or '┴' in inner
+        has_top = '┌' in inner
+        has_bottom = '└' in inner
         has_vert = any(c in inner for c in '│▼▲◄►v^')
 
         if has_top:
