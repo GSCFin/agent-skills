@@ -1,8 +1,13 @@
 node_modules/
 __pycache__/
+.ruff_cache/
 .worktrees/
+.tmp/
+.DS_Store
 
-walkthrough.md
+# npm pack artifacts
+antigravity-awesome-skills-*.tgz
+
 .agent/rules/
 .gemini/
 LOCAL_CONFIG.md
@@ -26,16 +31,18 @@ similar_skills_*.json
 remaining_*.json
 html_*.json
 
-# Temporary analysis scripts
-scripts/*voltagent*.py
-scripts/*html*.py
-scripts/*similar*.py
-scripts/*count*.py
+# Temporary analysis scripts (tools/scripts/)
+tools/scripts/*voltagent*.py
+tools/scripts/*html*.py
+tools/scripts/*similar*.py
+tools/scripts/*count*.py
 
 # Platform-specific
 .DS_Store
 
 # Optional baseline for legacy JS validator (scripts/validate-skills.js)
 validation-baseline.json
-.DS_Store
-.DS_Store
+
+# Web app generated assets (from npm run app:setup)
+apps/web-app/public/skills/
+apps/web-app/public/skills.json

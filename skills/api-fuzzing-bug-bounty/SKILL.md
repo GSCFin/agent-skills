@@ -1,11 +1,10 @@
 ---
 name: api-fuzzing-bug-bounty
 description: "This skill should be used when the user asks to \"test API security\", \"fuzz APIs\", \"find IDOR vulnerabilities\", \"test REST API\", \"test GraphQL\", \"API penetration testing\", \"bug b..."
-metadata:
-  author: zebbern
-  version: "1.1"
 risk: unknown
 source: community
+author: zebbern
+date_added: "2026-02-27"
 ---
 
 # API Fuzzing for Bug Bounty
