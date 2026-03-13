@@ -19,7 +19,7 @@ When the Gate B decision is `APPROVE_WITH_BASELINE_UPDATE`:
 3. Record the update in the audit trail
 
 ```
-apps/website/tests/e2e/uiux-gatecheck/baselines/
+<e2e-testing-root>/uiux-gatecheck/baselines/
   desktop/
     dashboard-default.png       ← updated
     dashboard-default.meta.json ← { "updated": "2026-03-11", "pr": "#142" }
@@ -34,7 +34,7 @@ apps/website/tests/e2e/uiux-gatecheck/baselines/
 Preserve old baselines for regression traceability:
 
 ```
-apps/website/tests/e2e/uiux-gatecheck/baselines/
+<e2e-testing-root>/uiux-gatecheck/baselines/
   archive/
     2026-03-01/
       desktop/dashboard-default.png

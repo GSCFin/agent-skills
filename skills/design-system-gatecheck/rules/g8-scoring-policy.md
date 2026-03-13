@@ -10,11 +10,11 @@ All test reports from Steps 4–7:
 
 | Report                                                                | Source Step |
 | --------------------------------------------------------------------- | ----------- |
-| `apps/website/tests/e2e/uiux-gatecheck/reports/conformance.json`      | Step 4      |
-| `apps/website/tests/e2e/uiux-gatecheck/reports/visual-summary.json`   | Step 5      |
-| `apps/website/tests/e2e/uiux-gatecheck/reports/navigation-graph.json` | Step 6      |
-| `apps/website/tests/e2e/uiux-gatecheck/reports/a11y.json`             | Step 7      |
-| `apps/website/tests/e2e/uiux-gatecheck/reports/contrast.csv`          | Step 7      |
+| `<e2e-testing-root>/uiux-gatecheck/reports/conformance.json`      | Step 4      |
+| `<e2e-testing-root>/uiux-gatecheck/reports/visual-summary.json`   | Step 5      |
+| `<e2e-testing-root>/uiux-gatecheck/reports/navigation-graph.json` | Step 6      |
+| `<e2e-testing-root>/uiux-gatecheck/reports/a11y.json`             | Step 7      |
+| `<e2e-testing-root>/uiux-gatecheck/reports/contrast.csv`          | Step 7      |
 
 ## Processing
 

@@ -67,8 +67,8 @@ function hasOverlap(boxA, boxB) {
 
 | Artifact            | Path                                                             |
 | ------------------- | ---------------------------------------------------------------- |
-| Conformance results | `apps/website/tests/e2e/uiux-gatecheck/reports/conformance.json` |
-| Conformance report  | `apps/website/tests/e2e/uiux-gatecheck/reports/conformance.md`   |
+| Conformance results | `<e2e-testing-root>/uiux-gatecheck/reports/conformance.json` |
+| Conformance report  | `<e2e-testing-root>/uiux-gatecheck/reports/conformance.md`   |
 
 Also emit attribution metadata per failure:
 ```json

@@ -71,8 +71,8 @@ If contract specifies `accessibility.screen_reader: true`:
 
 | Artifact        | Path                                                         |
 | --------------- | ------------------------------------------------------------ |
-| A11y results    | `apps/website/tests/e2e/uiux-gatecheck/reports/a11y.json`    |
-| Contrast report | `apps/website/tests/e2e/uiux-gatecheck/reports/contrast.csv` |
+| A11y results    | `<e2e-testing-root>/uiux-gatecheck/reports/a11y.json`    |
+| Contrast report | `<e2e-testing-root>/uiux-gatecheck/reports/contrast.csv` |
 
 ## Switching Rules
 

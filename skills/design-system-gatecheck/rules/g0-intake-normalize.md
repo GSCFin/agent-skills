@@ -34,7 +34,7 @@ Run a checklist validation against the PRD:
 | Personas            | ⚠️ Optional | Helpful for a11y prioritization           |
 | Breakpoints         | ✅          | At least mobile + desktop                 |
 
-### 0.3 Gap Detection
+### 0.3 Gap Detection & PRD Completeness Ralph Loop
 
 If any **required** field is missing, generate a `PRD_GAP_LIST`:
 
@@ -46,6 +46,9 @@ If any **required** field is missing, generate a `PRD_GAP_LIST`:
 - [ ] Breakpoints not defined (defaulting to standard 3-viewport set)
 ```
 
+**PRD Completeness Ralph Loop:**
+If `PRD_GAP_LIST` is generated, before proceeding further, dispatch a PRD Writer Agent to iteratively resolve the gap list and amend the PRD. The loop runs (Evaluator flags missing info -> Writer amends PRD) until the Evaluator yields a completely empty `PRD_GAP_LIST`. No silent assumptions or LLM inventions are allowed; data must be resolved in the PRD artifact first.
+
 ## Output
 
 | Artifact          | Path                                  |
@@ -55,7 +58,7 @@ If any **required** field is missing, generate a `PRD_GAP_LIST`:
 
 ## Switching Rules
 
-- **If PRD has critical gaps** → Set pipeline status to `NEEDS_PRD_CLARIFICATION`. **Do NOT proceed.** Notify the human and wait for PRD update.
+- **If PRD has critical gaps** → Trigger **PRD Completeness Ralph Loop**. Do not proceed to Step 1 until the loop successfully empties the gap list. If the PRD is irresolute / requires human logic: halt pipeline at `NEEDS_PRD_CLARIFICATION`.
 - **If PRD is complete** → Proceed to Step 1: Contract Generation.
 
 ## Next Step
