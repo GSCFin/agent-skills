@@ -147,6 +147,34 @@ class GenerateIndexCategoryTests(unittest.TestCase):
             skills = generate_index.generate_index(str(skills_dir), str(output_file))
             self.assertEqual(skills[0]["category"], "design")
 
+    def test_generate_index_applies_curated_domain_overrides(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            base = pathlib.Path(temp_dir)
+            skills_dir = base / "skills"
+            output_file = base / "skills_index.json"
+
+            fixtures = {
+                "commit": "workflow",
+                "activecampaign-automation": "marketing",
+                "datadog-automation": "reliability",
+                "business-analyst": "business",
+                "zod-validation-expert": "framework",
+            }
+
+            for skill_id in fixtures:
+                override_dir = skills_dir / skill_id
+                override_dir.mkdir(parents=True)
+                (override_dir / "SKILL.md").write_text(
+                    f"---\nname: {skill_id}\ncategory: custom\ndescription: Example\n---\nbody\n",
+                    encoding="utf-8",
+                )
+
+            skills = generate_index.generate_index(str(skills_dir), str(output_file))
+            categories = {skill["id"]: skill["category"] for skill in skills}
+
+            for skill_id, category in fixtures.items():
+                self.assertEqual(categories[skill_id], category)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -62,7 +62,7 @@
   {
     "id": "3d-web-experience",
     "path": "skills/3d-web-experience",
-    "category": "uncategorized",
+    "category": "design",
     "name": "3d-web-experience",
     "description": "You bring the third dimension to the web. You know when 3D enhances and when it's just showing off. You balance visual impact with performance. You make 3D accessible to users who've never touched a 3D app. You create moments of wonder without sacrificing usability.",
     "risk": "unknown",
@@ -72,7 +72,7 @@
   {
     "id": "ab-test-setup",
     "path": "skills/ab-test-setup",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "ab-test-setup",
     "description": "Structured guide for setting up A/B tests with mandatory gates for hypothesis, metrics, and execution readiness.",
     "risk": "unknown",
@@ -82,7 +82,7 @@
   {
     "id": "acceptance-orchestrator",
     "path": "skills/acceptance-orchestrator",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "acceptance-orchestrator",
     "description": "Use when a coding task should be driven end-to-end from issue intake through implementation, review, deployment, and acceptance verification with minimal human re-intervention.",
     "risk": "safe",
@@ -92,7 +92,7 @@
   {
     "id": "accessibility-compliance-accessibility-audit",
     "path": "skills/accessibility-compliance-accessibility-audit",
-    "category": "uncategorized",
+    "category": "design",
     "name": "accessibility-compliance-accessibility-audit",
     "description": "You are an accessibility expert specializing in WCAG compliance, inclusive design, and assistive technology compatibility. Conduct audits, identify barriers, and provide remediation guidance.",
     "risk": "unknown",
@@ -102,7 +102,7 @@
   {
     "id": "active-directory-attacks",
     "path": "skills/active-directory-attacks",
-    "category": "uncategorized",
+    "category": "security",
     "name": "active-directory-attacks",
     "description": "Provide comprehensive techniques for attacking Microsoft Active Directory environments. Covers reconnaissance, credential harvesting, Kerberos attacks, lateral movement, privilege escalation, and domain dominance for red team operations and penetration testing.",
     "risk": "unknown",
@@ -112,7 +112,7 @@
   {
     "id": "activecampaign-automation",
     "path": "skills/activecampaign-automation",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "activecampaign-automation",
     "description": "Automate ActiveCampaign tasks via Rube MCP (Composio): manage contacts, tags, list subscriptions, automation enrollment, and tasks. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -452,7 +452,7 @@
   {
     "id": "alpha-vantage",
     "path": "skills/alpha-vantage",
-    "category": "uncategorized",
+    "category": "data",
     "name": "alpha-vantage",
     "description": "Access 20+ years of global financial data: equities, options, forex, crypto, commodities, economic indicators, and 50+ technical indicators.",
     "risk": "unknown",
@@ -472,7 +472,7 @@
   {
     "id": "amplitude-automation",
     "path": "skills/amplitude-automation",
-    "category": "uncategorized",
+    "category": "data",
     "name": "amplitude-automation",
     "description": "Automate Amplitude tasks via Rube MCP (Composio): events, user activity, cohorts, user identification. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -482,7 +482,7 @@
   {
     "id": "analytics-product",
     "path": "skills/analytics-product",
-    "category": "uncategorized",
+    "category": "data",
     "name": "analytics-product",
     "description": "Analytics de produto \u2014 PostHog, Mixpanel, eventos, funnels, cohorts, retencao, north star metric, OKRs e dashboards de produto.",
     "risk": "none",
@@ -502,7 +502,7 @@
   {
     "id": "analyze-project",
     "path": "skills/analyze-project",
-    "category": "uncategorized",
+    "category": "meta",
     "name": "analyze-project",
     "description": "Forensic root cause analyzer for Antigravity sessions. Classifies scope deltas, rework patterns, root causes, hotspots, and auto-improves prompts/health.",
     "risk": "unknown",
@@ -602,7 +602,7 @@
   {
     "id": "anti-reversing-techniques",
     "path": "skills/anti-reversing-techniques",
-    "category": "uncategorized",
+    "category": "security",
     "name": "anti-reversing-techniques",
     "description": "AUTHORIZED USE ONLY: This skill contains dual-use security techniques. Before proceeding with any bypass or analysis: > 1.",
     "risk": "unknown",
@@ -632,7 +632,7 @@
   {
     "id": "antigravity-workflows",
     "path": "skills/antigravity-workflows",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "antigravity-workflows",
     "description": "Orchestrate multiple Antigravity skills through guided workflows for SaaS MVP delivery, security audits, AI agent builds, and browser QA.",
     "risk": "none",
@@ -942,7 +942,7 @@
   {
     "id": "arm-cortex-expert",
     "path": "skills/arm-cortex-expert",
-    "category": "uncategorized",
+    "category": "development",
     "name": "arm-cortex-expert",
     "description": "Senior embedded software engineer specializing in firmware and driver development for ARM Cortex-M microcontrollers (Teensy, STM32, nRF52, SAMD).",
     "risk": "unknown",
@@ -952,7 +952,7 @@
   {
     "id": "asana-automation",
     "path": "skills/asana-automation",
-    "category": "uncategorized",
+    "category": "project-management",
     "name": "asana-automation",
     "description": "Automate Asana tasks via Rube MCP (Composio): tasks, projects, sections, teams, workspaces. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -962,7 +962,7 @@
   {
     "id": "ask-questions-if-underspecified",
     "path": "skills/ask-questions-if-underspecified",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "ask-questions-if-underspecified",
     "description": "Clarify requirements before implementing. Use when serious doubts arise.",
     "risk": "unknown",
@@ -1022,7 +1022,7 @@
   {
     "id": "audit-context-building",
     "path": "skills/audit-context-building",
-    "category": "uncategorized",
+    "category": "meta",
     "name": "audit-context-building",
     "description": "Enables ultra-granular, line-by-line code analysis to build deep architectural context before vulnerability or bug finding.",
     "risk": "unknown",
@@ -2462,7 +2462,7 @@
   {
     "id": "basecamp-automation",
     "path": "skills/basecamp-automation",
-    "category": "uncategorized",
+    "category": "project-management",
     "name": "basecamp-automation",
     "description": "Automate Basecamp project management, to-dos, messages, people, and to-do list organization via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -2532,7 +2532,7 @@
   {
     "id": "bazel-build-optimization",
     "path": "skills/bazel-build-optimization",
-    "category": "uncategorized",
+    "category": "development",
     "name": "bazel-build-optimization",
     "description": "Optimize Bazel builds for large-scale monorepos. Use when configuring Bazel, implementing remote execution, or optimizing build performance for enterprise codebases.",
     "risk": "unknown",
@@ -2562,7 +2562,7 @@
   {
     "id": "behavioral-modes",
     "path": "skills/behavioral-modes",
-    "category": "uncategorized",
+    "category": "meta",
     "name": "behavioral-modes",
     "description": "AI operational modes (brainstorm, implement, debug, review, teach, ship, orchestrate). Use to adapt behavior based on task type.",
     "risk": "unknown",
@@ -2622,7 +2622,7 @@
   {
     "id": "bitbucket-automation",
     "path": "skills/bitbucket-automation",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "bitbucket-automation",
     "description": "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -2652,7 +2652,7 @@
   {
     "id": "blog-writing-guide",
     "path": "skills/blog-writing-guide",
-    "category": "uncategorized",
+    "category": "content",
     "name": "blog-writing-guide",
     "description": "This skill enforces Sentry's blog writing standards across every post \u2014 whether you're helping an engineer write their first blog post or a marketer draft a product announcement.",
     "risk": "unknown",
@@ -2672,7 +2672,7 @@
   {
     "id": "box-automation",
     "path": "skills/box-automation",
-    "category": "uncategorized",
+    "category": "productivity",
     "name": "box-automation",
     "description": "Automate Box operations including file upload/download, content search, folder management, collaboration, metadata queries, and sign requests through Composio's Box toolkit.",
     "risk": "unknown",
@@ -2722,7 +2722,7 @@
   {
     "id": "brevo-automation",
     "path": "skills/brevo-automation",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "brevo-automation",
     "description": "Automate Brevo (formerly Sendinblue) email marketing operations through Composio's Brevo toolkit via Rube MCP.",
     "risk": "unknown",
@@ -2732,7 +2732,7 @@
   {
     "id": "broken-authentication",
     "path": "skills/broken-authentication",
-    "category": "uncategorized",
+    "category": "security",
     "name": "broken-authentication",
     "description": "Identify and exploit authentication and session management vulnerabilities in web applications. Broken authentication consistently ranks in the OWASP Top 10 and can lead to account takeover, identity theft, and unauthorized access to sensitive systems.",
     "risk": "unknown",
@@ -2782,7 +2782,7 @@
   {
     "id": "building-native-ui",
     "path": "skills/building-native-ui",
-    "category": "uncategorized",
+    "category": "mobile",
     "name": "building-native-ui",
     "description": "Complete guide for building beautiful apps with Expo Router. Covers fundamentals, styling, components, navigation, animations, patterns, and native tabs.",
     "risk": "unknown",
@@ -2792,7 +2792,7 @@
   {
     "id": "bullmq-specialist",
     "path": "skills/bullmq-specialist",
-    "category": "uncategorized",
+    "category": "framework",
     "name": "bullmq-specialist",
     "description": "BullMQ expert for Redis-backed job queues, background processing, and reliable async execution in Node.js/TypeScript applications. Use when: bullmq, bull queue, redis queue, background job, job queue.",
     "risk": "unknown",
@@ -2812,7 +2812,7 @@
   {
     "id": "burp-suite-testing",
     "path": "skills/burp-suite-testing",
-    "category": "uncategorized",
+    "category": "security",
     "name": "burp-suite-testing",
     "description": "Execute comprehensive web application security testing using Burp Suite's integrated toolset, including HTTP traffic interception and modification, request analysis and replay, automated vulnerability scanning, and manual testing workflows.",
     "risk": "unknown",
@@ -2832,7 +2832,7 @@
   {
     "id": "business-analyst",
     "path": "skills/business-analyst",
-    "category": "uncategorized",
+    "category": "business",
     "name": "business-analyst",
     "description": "Master modern business analysis with AI-powered analytics, real-time dashboards, and data-driven insights. Build comprehensive KPI frameworks, predictive models, and strategic recommendations.",
     "risk": "unknown",
@@ -2842,7 +2842,7 @@
   {
     "id": "busybox-on-windows",
     "path": "skills/busybox-on-windows",
-    "category": "uncategorized",
+    "category": "development",
     "name": "busybox-on-windows",
     "description": "How to use a Win32 build of BusyBox to run many of the standard UNIX command line tools on Windows.",
     "risk": "unknown",
@@ -2852,7 +2852,7 @@
   {
     "id": "c-pro",
     "path": "skills/c-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "c-pro",
     "description": "Write efficient C code with proper memory management, pointer",
     "risk": "unknown",
@@ -2912,7 +2912,7 @@
   {
     "id": "cal-com-automation",
     "path": "skills/cal-com-automation",
-    "category": "uncategorized",
+    "category": "productivity",
     "name": "cal-com-automation",
     "description": "Automate Cal.com tasks via Rube MCP (Composio): manage bookings, check availability, configure webhooks, and handle teams. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -2932,7 +2932,7 @@
   {
     "id": "calendly-automation",
     "path": "skills/calendly-automation",
-    "category": "uncategorized",
+    "category": "productivity",
     "name": "calendly-automation",
     "description": "Automate Calendly scheduling, event management, invitee tracking, availability checks, and organization administration via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -2942,7 +2942,7 @@
   {
     "id": "canva-automation",
     "path": "skills/canva-automation",
-    "category": "uncategorized",
+    "category": "design",
     "name": "canva-automation",
     "description": "Automate Canva tasks via Rube MCP (Composio): designs, exports, folders, brand templates, autofill. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -2962,7 +2962,7 @@
   {
     "id": "carrier-relationship-management",
     "path": "skills/carrier-relationship-management",
-    "category": "uncategorized",
+    "category": "business",
     "name": "carrier-relationship-management",
     "description": "Codified expertise for managing carrier portfolios, negotiating freight rates, tracking carrier performance, allocating freight, and maintaining strategic carrier relationships.",
     "risk": "safe",
@@ -3062,7 +3062,7 @@
   {
     "id": "changelog-automation",
     "path": "skills/changelog-automation",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "changelog-automation",
     "description": "Automate changelog generation from commits, PRs, and releases following Keep a Changelog format. Use when setting up release workflows, generating release notes, or standardizing commit conventions.",
     "risk": "unknown",
@@ -3292,7 +3292,7 @@
   {
     "id": "closed-loop-delivery",
     "path": "skills/closed-loop-delivery",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "closed-loop-delivery",
     "description": "Use when a coding task must be completed against explicit acceptance criteria with minimal user re-intervention across implementation, review feedback, deployment, and runtime verification.",
     "risk": "safe",
@@ -3332,7 +3332,7 @@
   {
     "id": "cloudflare-workers-expert",
     "path": "skills/cloudflare-workers-expert",
-    "category": "uncategorized",
+    "category": "framework",
     "name": "cloudflare-workers-expert",
     "description": "Expert in Cloudflare Workers and the Edge Computing ecosystem. Covers Wrangler, KV, D1, Durable Objects, and R2 storage.",
     "risk": "safe",
@@ -3522,7 +3522,7 @@
   {
     "id": "commit",
     "path": "skills/commit",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "commit",
     "description": "ALWAYS use this skill when committing code changes \u2014 never commit directly without it. Creates commits following Sentry conventions with proper conventional commit format and issue references. Trigger on any commit, git commit, save changes, or commit message task.",
     "risk": "unknown",
@@ -3672,7 +3672,7 @@
   {
     "id": "confluence-automation",
     "path": "skills/confluence-automation",
-    "category": "uncategorized",
+    "category": "project-management",
     "name": "confluence-automation",
     "description": "Automate Confluence page creation, content search, space management, labels, and hierarchy navigation via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -3682,7 +3682,7 @@
   {
     "id": "constant-time-analysis",
     "path": "skills/constant-time-analysis",
-    "category": "uncategorized",
+    "category": "security",
     "name": "constant-time-analysis",
     "description": "Analyze cryptographic code to detect operations that leak secret data through execution timing variations.",
     "risk": "unknown",
@@ -3822,7 +3822,7 @@
   {
     "id": "context7-auto-research",
     "path": "skills/context7-auto-research",
-    "category": "uncategorized",
+    "category": "meta",
     "name": "context7-auto-research",
     "description": "Automatically fetch latest library/framework documentation for Claude Code via Context7 API",
     "risk": "unknown",
@@ -3842,7 +3842,7 @@
   {
     "id": "convertkit-automation",
     "path": "skills/convertkit-automation",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "convertkit-automation",
     "description": "Automate ConvertKit (Kit) tasks via Rube MCP (Composio): manage subscribers, tags, broadcasts, and broadcast stats. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -3852,7 +3852,7 @@
   {
     "id": "convex",
     "path": "skills/convex",
-    "category": "uncategorized",
+    "category": "framework",
     "name": "convex",
     "description": "Convex reactive backend expert: schema design, TypeScript functions, real-time subscriptions, auth, file storage, scheduling, and deployment.",
     "risk": "safe",
@@ -3912,7 +3912,7 @@
   {
     "id": "cpp-pro",
     "path": "skills/cpp-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "cpp-pro",
     "description": "Write idiomatic C++ code with modern features, RAII, smart pointers, and STL algorithms. Handles templates, move semantics, and performance optimization.",
     "risk": "unknown",
@@ -3962,7 +3962,7 @@
   {
     "id": "cred-omega",
     "path": "skills/cred-omega",
-    "category": "uncategorized",
+    "category": "security",
     "name": "cred-omega",
     "description": "CISO operacional enterprise para gestao total de credenciais e segredos.",
     "risk": "critical",
@@ -3992,7 +3992,7 @@
   {
     "id": "csharp-pro",
     "path": "skills/csharp-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "csharp-pro",
     "description": "Write modern C# code with advanced features like records, pattern matching, and async/await. Optimizes .NET applications, implements enterprise patterns, and ensures comprehensive testing.",
     "risk": "unknown",
@@ -4202,7 +4202,7 @@
   {
     "id": "datadog-automation",
     "path": "skills/datadog-automation",
-    "category": "uncategorized",
+    "category": "reliability",
     "name": "datadog-automation",
     "description": "Automate Datadog tasks via Rube MCP (Composio): query metrics, search logs, manage monitors/dashboards, create events and downtimes. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -4352,7 +4352,7 @@
   {
     "id": "dependency-upgrade",
     "path": "skills/dependency-upgrade",
-    "category": "uncategorized",
+    "category": "development",
     "name": "dependency-upgrade",
     "description": "Master major dependency version upgrades, compatibility analysis, staged upgrade strategies, and comprehensive testing approaches.",
     "risk": "unknown",
@@ -4482,7 +4482,7 @@
   {
     "id": "differential-review",
     "path": "skills/differential-review",
-    "category": "uncategorized",
+    "category": "security",
     "name": "differential-review",
     "description": "Security-focused code review for PRs, commits, and diffs.",
     "risk": "unknown",
@@ -4492,7 +4492,7 @@
   {
     "id": "discord-automation",
     "path": "skills/discord-automation",
-    "category": "uncategorized",
+    "category": "api-integration",
     "name": "discord-automation",
     "description": "Automate Discord tasks via Rube MCP (Composio): messages, channels, roles, webhooks, reactions. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -4632,7 +4632,7 @@
   {
     "id": "docusign-automation",
     "path": "skills/docusign-automation",
-    "category": "uncategorized",
+    "category": "productivity",
     "name": "docusign-automation",
     "description": "Automate DocuSign tasks via Rube MCP (Composio): templates, envelopes, signatures, document management. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -4662,7 +4662,7 @@
   {
     "id": "dotnet-architect",
     "path": "skills/dotnet-architect",
-    "category": "uncategorized",
+    "category": "development",
     "name": "dotnet-architect",
     "description": "Expert .NET backend architect specializing in C#, ASP.NET Core, Entity Framework, Dapper, and enterprise application patterns.",
     "risk": "unknown",
@@ -4712,7 +4712,7 @@
   {
     "id": "dropbox-automation",
     "path": "skills/dropbox-automation",
-    "category": "uncategorized",
+    "category": "productivity",
     "name": "dropbox-automation",
     "description": "Automate Dropbox file management, sharing, search, uploads, downloads, and folder operations via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -4732,7 +4732,7 @@
   {
     "id": "dx-optimizer",
     "path": "skills/dx-optimizer",
-    "category": "uncategorized",
+    "category": "development",
     "name": "dx-optimizer",
     "description": "Developer Experience specialist. Improves tooling, setup, and workflows. Use PROACTIVELY when setting up new projects, after team feedback, or when development friction is noticed.",
     "risk": "unknown",
@@ -4772,7 +4772,7 @@
   {
     "id": "electron-development",
     "path": "skills/electron-development",
-    "category": "uncategorized",
+    "category": "development",
     "name": "electron-development",
     "description": "Master Electron desktop app development with secure IPC, contextIsolation, preload scripts, multi-process architecture, electron-builder packaging, code signing, and auto-update.",
     "risk": "safe",
@@ -4782,7 +4782,7 @@
   {
     "id": "elixir-pro",
     "path": "skills/elixir-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "elixir-pro",
     "description": "Write idiomatic Elixir code with OTP patterns, supervision trees, and Phoenix LiveView. Masters concurrency, fault tolerance, and distributed systems.",
     "risk": "unknown",
@@ -4862,7 +4862,7 @@
   {
     "id": "energy-procurement",
     "path": "skills/energy-procurement",
-    "category": "uncategorized",
+    "category": "business",
     "name": "energy-procurement",
     "description": "Codified expertise for electricity and gas procurement, tariff optimisation, demand charge management, renewable PPA evaluation, and multi-facility energy cost management.",
     "risk": "safe",
@@ -4882,7 +4882,7 @@
   {
     "id": "environment-setup-guide",
     "path": "skills/environment-setup-guide",
-    "category": "uncategorized",
+    "category": "development",
     "name": "environment-setup-guide",
     "description": "Guide developers through setting up development environments with proper tools, dependencies, and configurations",
     "risk": "unknown",
@@ -4972,7 +4972,7 @@
   {
     "id": "ethical-hacking-methodology",
     "path": "skills/ethical-hacking-methodology",
-    "category": "uncategorized",
+    "category": "security",
     "name": "ethical-hacking-methodology",
     "description": "Master the complete penetration testing lifecycle from reconnaissance through reporting. This skill covers the five stages of ethical hacking methodology, essential tools, attack techniques, and professional reporting for authorized security assessments.",
     "risk": "unknown",
@@ -5032,7 +5032,7 @@
   {
     "id": "executing-plans",
     "path": "skills/executing-plans",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "executing-plans",
     "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
     "risk": "unknown",
@@ -5232,7 +5232,7 @@
   {
     "id": "fda-food-safety-auditor",
     "path": "skills/fda-food-safety-auditor",
-    "category": "uncategorized",
+    "category": "legal",
     "name": "fda-food-safety-auditor",
     "description": "Expert AI auditor for FDA Food Safety (FSMA), HACCP, and PCQI compliance. Reviews food facility records and preventive controls.",
     "risk": "unknown",
@@ -5242,7 +5242,7 @@
   {
     "id": "fda-medtech-compliance-auditor",
     "path": "skills/fda-medtech-compliance-auditor",
-    "category": "uncategorized",
+    "category": "legal",
     "name": "fda-medtech-compliance-auditor",
     "description": "Expert AI auditor for Medical Device (SaMD) compliance, IEC 62304, and 21 CFR Part 820. Reviews DHFs, technical files, and software validation.",
     "risk": "unknown",
@@ -5272,7 +5272,7 @@
   {
     "id": "figma-automation",
     "path": "skills/figma-automation",
-    "category": "uncategorized",
+    "category": "design",
     "name": "figma-automation",
     "description": "Automate Figma tasks via Rube MCP (Composio): files, components, design tokens, comments, exports. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -5312,7 +5312,7 @@
   {
     "id": "filesystem-context",
     "path": "skills/filesystem-context",
-    "category": "uncategorized",
+    "category": "meta",
     "name": "filesystem-context",
     "description": "Use for file-based context management, dynamic context discovery, and reducing context window bloat. Offload context to files for just-in-time loading.",
     "risk": "unknown",
@@ -5422,7 +5422,7 @@
   {
     "id": "flutter-expert",
     "path": "skills/flutter-expert",
-    "category": "uncategorized",
+    "category": "mobile",
     "name": "flutter-expert",
     "description": "Master Flutter development with Dart 3, advanced widgets, and multi-platform deployment.",
     "risk": "unknown",
@@ -5852,7 +5852,7 @@
   {
     "id": "gh-review-requests",
     "path": "skills/gh-review-requests",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "gh-review-requests",
     "description": "Fetch unread GitHub notifications for open PRs where review is requested from a specified team or opened by a team member. Use when asked to \"find PRs I need to review\", \"show my review requests\", \"what needs my review\", \"fetch GitHub review requests\", or \"check team review queue\".",
     "risk": "unknown",
@@ -5862,7 +5862,7 @@
   {
     "id": "gha-security-review",
     "path": "skills/gha-security-review",
-    "category": "uncategorized",
+    "category": "security",
     "name": "gha-security-review",
     "description": "Find exploitable vulnerabilities in GitHub Actions workflows. Every finding MUST include a concrete exploitation scenario \u2014 if you can't build the attack, don't report it.",
     "risk": "unknown",
@@ -6002,7 +6002,7 @@
   {
     "id": "gmail-automation",
     "path": "skills/gmail-automation",
-    "category": "uncategorized",
+    "category": "productivity",
     "name": "gmail-automation",
     "description": "Lightweight Gmail integration with standalone OAuth authentication. No MCP server required.",
     "risk": "unknown",
@@ -6212,7 +6212,7 @@
   {
     "id": "haskell-pro",
     "path": "skills/haskell-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "haskell-pro",
     "description": "Expert Haskell engineer specializing in advanced type systems, pure",
     "risk": "unknown",
@@ -6432,7 +6432,7 @@
   {
     "id": "hr-pro",
     "path": "skills/hr-pro",
-    "category": "uncategorized",
+    "category": "business",
     "name": "hr-pro",
     "description": "Professional, ethical HR partner for hiring, onboarding/offboarding, PTO and leave, performance, compliant policies, and employee relations.",
     "risk": "unknown",
@@ -6702,7 +6702,7 @@
   {
     "id": "inngest",
     "path": "skills/inngest",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "inngest",
     "description": "You are an Inngest expert who builds reliable background processing without managing infrastructure. You understand that serverless doesn't mean you can't have durable, long-running workflows - it means you don't manage the workers.",
     "risk": "unknown",
@@ -6782,7 +6782,7 @@
   {
     "id": "inventory-demand-planning",
     "path": "skills/inventory-demand-planning",
-    "category": "uncategorized",
+    "category": "business",
     "name": "inventory-demand-planning",
     "description": "Codified expertise for demand forecasting, safety stock optimisation, replenishment planning, and promotional lift estimation at multi-location retailers.",
     "risk": "safe",
@@ -6822,7 +6822,7 @@
   {
     "id": "iterate-pr",
     "path": "skills/iterate-pr",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "iterate-pr",
     "description": "Iterate on a PR until CI passes. Use when you need to fix CI failures, address review feedback, or continuously push fixes until all checks are green. Automates the feedback-fix-push-wait cycle.",
     "risk": "unknown",
@@ -6832,7 +6832,7 @@
   {
     "id": "java-pro",
     "path": "skills/java-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "java-pro",
     "description": "Master Java 21+ with modern features like virtual threads, pattern matching, and Spring Boot 3.x. Expert in the latest Java ecosystem including GraalVM, Project Loom, and cloud-native patterns.",
     "risk": "unknown",
@@ -6882,7 +6882,7 @@
   {
     "id": "jira-automation",
     "path": "skills/jira-automation",
-    "category": "uncategorized",
+    "category": "project-management",
     "name": "jira-automation",
     "description": "Automate Jira tasks via Rube MCP (Composio): issues, projects, sprints, boards, comments, users. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -6962,7 +6962,7 @@
   {
     "id": "klaviyo-automation",
     "path": "skills/klaviyo-automation",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "klaviyo-automation",
     "description": "Automate Klaviyo tasks via Rube MCP (Composio): manage email/SMS campaigns, inspect campaign messages, track tags, and monitor send jobs. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -7222,7 +7222,7 @@
   {
     "id": "linear-automation",
     "path": "skills/linear-automation",
-    "category": "uncategorized",
+    "category": "project-management",
     "name": "linear-automation",
     "description": "Automate Linear tasks via Rube MCP (Composio): issues, projects, cycles, teams, labels. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -7492,7 +7492,7 @@
   {
     "id": "mailchimp-automation",
     "path": "skills/mailchimp-automation",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "mailchimp-automation",
     "description": "Automate Mailchimp email marketing including campaigns, audiences, subscribers, segments, and analytics via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -7832,7 +7832,7 @@
   {
     "id": "microsoft-teams-automation",
     "path": "skills/microsoft-teams-automation",
-    "category": "uncategorized",
+    "category": "api-integration",
     "name": "microsoft-teams-automation",
     "description": "Automate Microsoft Teams tasks via Rube MCP (Composio): send messages, manage channels, create meetings, handle chats, and search messages. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -7852,7 +7852,7 @@
   {
     "id": "miro-automation",
     "path": "skills/miro-automation",
-    "category": "uncategorized",
+    "category": "project-management",
     "name": "miro-automation",
     "description": "Automate Miro tasks via Rube MCP (Composio): boards, items, sticky notes, frames, sharing, connectors. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -7862,7 +7862,7 @@
   {
     "id": "mixpanel-automation",
     "path": "skills/mixpanel-automation",
-    "category": "uncategorized",
+    "category": "data",
     "name": "mixpanel-automation",
     "description": "Automate Mixpanel tasks via Rube MCP (Composio): events, segmentation, funnels, cohorts, user profiles, JQL queries. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -7882,7 +7882,7 @@
   {
     "id": "ml-pipeline-workflow",
     "path": "skills/ml-pipeline-workflow",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "ml-pipeline-workflow",
     "description": "Complete end-to-end MLOps pipeline orchestration from data preparation through model deployment.",
     "risk": "unknown",
@@ -7962,7 +7962,7 @@
   {
     "id": "monday-automation",
     "path": "skills/monday-automation",
-    "category": "uncategorized",
+    "category": "project-management",
     "name": "monday-automation",
     "description": "Automate Monday.com work management including boards, items, columns, groups, subitems, and updates via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -8672,7 +8672,7 @@
   {
     "id": "on-call-handoff-patterns",
     "path": "skills/on-call-handoff-patterns",
-    "category": "uncategorized",
+    "category": "reliability",
     "name": "on-call-handoff-patterns",
     "description": "Effective patterns for on-call shift transitions, ensuring continuity, context transfer, and reliable incident response across shifts.",
     "risk": "unknown",
@@ -8692,7 +8692,7 @@
   {
     "id": "one-drive-automation",
     "path": "skills/one-drive-automation",
-    "category": "uncategorized",
+    "category": "productivity",
     "name": "one-drive-automation",
     "description": "Automate OneDrive file management, search, uploads, downloads, sharing, permissions, and folder operations via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -8782,7 +8782,7 @@
   {
     "id": "pagerduty-automation",
     "path": "skills/pagerduty-automation",
-    "category": "uncategorized",
+    "category": "reliability",
     "name": "pagerduty-automation",
     "description": "Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -8962,7 +8962,7 @@
   {
     "id": "php-pro",
     "path": "skills/php-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "php-pro",
     "description": "Write idiomatic PHP code with generators, iterators, SPL data\nstructures, and modern OOP features. Use PROACTIVELY for high-performance PHP\napplications.\n",
     "risk": "unknown",
@@ -8982,7 +8982,7 @@
   {
     "id": "pipedrive-automation",
     "path": "skills/pipedrive-automation",
-    "category": "uncategorized",
+    "category": "business",
     "name": "pipedrive-automation",
     "description": "Automate Pipedrive CRM operations including deals, contacts, organizations, activities, notes, and pipeline management via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -9002,7 +9002,7 @@
   {
     "id": "plan-writing",
     "path": "skills/plan-writing",
-    "category": "uncategorized",
+    "category": "planning",
     "name": "plan-writing",
     "description": "Structured task planning with clear breakdowns, dependencies, and verification criteria. Use when implementing features, refactoring, or any multi-step work.",
     "risk": "unknown",
@@ -9122,7 +9122,7 @@
   {
     "id": "posthog-automation",
     "path": "skills/posthog-automation",
-    "category": "uncategorized",
+    "category": "data",
     "name": "posthog-automation",
     "description": "Automate PostHog tasks via Rube MCP (Composio): events, feature flags, projects, user profiles, annotations. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -9132,7 +9132,7 @@
   {
     "id": "postmark-automation",
     "path": "skills/postmark-automation",
-    "category": "uncategorized",
+    "category": "api-integration",
     "name": "postmark-automation",
     "description": "Automate Postmark email delivery tasks via Rube MCP (Composio): send templated emails, manage templates, monitor delivery stats and bounces. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -9172,7 +9172,7 @@
   {
     "id": "pr-writer",
     "path": "skills/pr-writer",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "pr-writer",
     "description": "Create pull requests following Sentry's engineering practices.",
     "risk": "unknown",
@@ -9202,7 +9202,7 @@
   {
     "id": "privacy-by-design",
     "path": "skills/privacy-by-design",
-    "category": "uncategorized",
+    "category": "security",
     "name": "privacy-by-design",
     "description": "Use when building apps that collect user data. Ensures privacy protections are built in from the start\u2014data minimization, consent, encryption.",
     "risk": "safe",
@@ -9692,7 +9692,7 @@
   {
     "id": "receiving-code-review",
     "path": "skills/receiving-code-review",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "receiving-code-review",
     "description": "Code review requires technical evaluation, not emotional performance.",
     "risk": "unknown",
@@ -9722,7 +9722,7 @@
   {
     "id": "reddit-automation",
     "path": "skills/reddit-automation",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "reddit-automation",
     "description": "Automate Reddit tasks via Rube MCP (Composio): search subreddits, create posts, manage comments, and browse top content. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -9792,7 +9792,7 @@
   {
     "id": "requesting-code-review",
     "path": "skills/requesting-code-review",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "requesting-code-review",
     "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
     "risk": "unknown",
@@ -9892,7 +9892,7 @@
   {
     "id": "ruby-pro",
     "path": "skills/ruby-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "ruby-pro",
     "description": "Write idiomatic Ruby code with metaprogramming, Rails patterns, and performance optimization. Specializes in Ruby on Rails, gem development, and testing frameworks.",
     "risk": "unknown",
@@ -10002,7 +10002,7 @@
   {
     "id": "scala-pro",
     "path": "skills/scala-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "scala-pro",
     "description": "Master enterprise-grade Scala development with functional programming, distributed systems, and big data processing. Expert in Apache Pekko, Akka, Spark, ZIO/Cats Effect, and reactive architectures.",
     "risk": "unknown",
@@ -10292,7 +10292,7 @@
   {
     "id": "sentry-automation",
     "path": "skills/sentry-automation",
-    "category": "uncategorized",
+    "category": "reliability",
     "name": "sentry-automation",
     "description": "Automate Sentry tasks via Rube MCP (Composio): manage issues/events, configure alerts, track releases, monitor projects and teams. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -10442,7 +10442,7 @@
   {
     "id": "service-mesh-expert",
     "path": "skills/service-mesh-expert",
-    "category": "uncategorized",
+    "category": "reliability",
     "name": "service-mesh-expert",
     "description": "Expert service mesh architect specializing in Istio, Linkerd, and cloud-native networking patterns. Masters traffic management, security policies, observability integration, and multi-cluster mesh con",
     "risk": "unknown",
@@ -10472,7 +10472,7 @@
   {
     "id": "shadcn",
     "path": "skills/shadcn",
-    "category": "uncategorized",
+    "category": "framework",
     "name": "shadcn",
     "description": "Manages shadcn/ui components and projects, providing context, documentation, and usage patterns for building modern design systems.",
     "risk": "safe",
@@ -10892,7 +10892,7 @@
   {
     "id": "square-automation",
     "path": "skills/square-automation",
-    "category": "uncategorized",
+    "category": "api-integration",
     "name": "square-automation",
     "description": "Automate Square tasks via Rube MCP (Composio): payments, orders, invoices, locations. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -11072,7 +11072,7 @@
   {
     "id": "subagent-driven-development",
     "path": "skills/subagent-driven-development",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "subagent-driven-development",
     "description": "Use when executing implementation plans with independent tasks in the current session",
     "risk": "unknown",
@@ -11182,7 +11182,7 @@
   {
     "id": "tanstack-query-expert",
     "path": "skills/tanstack-query-expert",
-    "category": "uncategorized",
+    "category": "framework",
     "name": "tanstack-query-expert",
     "description": "Expert in TanStack Query (React Query) \u2014 asynchronous state management. Covers data fetching, stale time configuration, mutations, optimistic updates, and Next.js App Router (SSR) integration.",
     "risk": "safe",
@@ -11632,7 +11632,7 @@
   {
     "id": "tiktok-automation",
     "path": "skills/tiktok-automation",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "tiktok-automation",
     "description": "Automate TikTok tasks via Rube MCP (Composio): upload/publish videos, post photos, manage content, and view user profiles/stats. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -11642,7 +11642,7 @@
   {
     "id": "todoist-automation",
     "path": "skills/todoist-automation",
-    "category": "uncategorized",
+    "category": "project-management",
     "name": "todoist-automation",
     "description": "Automate Todoist task management, projects, sections, filtering, and bulk operations via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -11702,7 +11702,7 @@
   {
     "id": "trello-automation",
     "path": "skills/trello-automation",
-    "category": "uncategorized",
+    "category": "project-management",
     "name": "trello-automation",
     "description": "Automate Trello boards, cards, and workflows via Rube MCP (Composio). Create cards, manage lists, assign members, and search across boards programmatically.",
     "risk": "unknown",
@@ -11712,7 +11712,7 @@
   {
     "id": "trigger-dev",
     "path": "skills/trigger-dev",
-    "category": "uncategorized",
+    "category": "workflow",
     "name": "trigger-dev",
     "description": "You are a Trigger.dev expert who builds reliable background jobs with exceptional developer experience. You understand that Trigger.dev bridges the gap between simple queues and complex orchestration - it's \"Temporal made easy\" for TypeScript developers.",
     "risk": "unknown",
@@ -11762,7 +11762,7 @@
   {
     "id": "twitter-automation",
     "path": "skills/twitter-automation",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "twitter-automation",
     "description": "Automate Twitter/X tasks via Rube MCP (Composio): posts, search, users, bookmarks, lists, media. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -11832,7 +11832,7 @@
   {
     "id": "ui-visual-validator",
     "path": "skills/ui-visual-validator",
-    "category": "uncategorized",
+    "category": "design",
     "name": "ui-visual-validator",
     "description": "Rigorous visual validation expert specializing in UI testing, design system compliance, and accessibility verification.",
     "risk": "unknown",
@@ -11892,7 +11892,7 @@
   {
     "id": "unreal-engine-cpp-pro",
     "path": "skills/unreal-engine-cpp-pro",
-    "category": "uncategorized",
+    "category": "code",
     "name": "unreal-engine-cpp-pro",
     "description": "Expert guide for Unreal Engine 5.x C++ development, covering UObject hygiene, performance patterns, and best practices.",
     "risk": "safe",
@@ -11962,7 +11962,7 @@
   {
     "id": "uv-package-manager",
     "path": "skills/uv-package-manager",
-    "category": "uncategorized",
+    "category": "development",
     "name": "uv-package-manager",
     "description": "Comprehensive guide to using uv, an extremely fast Python package installer and resolver written in Rust, for modern Python project management and dependency workflows.",
     "risk": "unknown",
@@ -12292,7 +12292,7 @@
   {
     "id": "webflow-automation",
     "path": "skills/webflow-automation",
-    "category": "uncategorized",
+    "category": "design",
     "name": "webflow-automation",
     "description": "Automate Webflow CMS collections, site publishing, page management, asset uploads, and ecommerce orders via Rube MCP (Composio). Always search tools first for current schemas.",
     "risk": "unknown",
@@ -12322,7 +12322,7 @@
   {
     "id": "whatsapp-automation",
     "path": "skills/whatsapp-automation",
-    "category": "uncategorized",
+    "category": "api-integration",
     "name": "whatsapp-automation",
     "description": "Automate WhatsApp Business tasks via Rube MCP (Composio): send messages, manage templates, upload media, and handle contacts. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -12532,7 +12532,7 @@
   {
     "id": "writing-plans",
     "path": "skills/writing-plans",
-    "category": "uncategorized",
+    "category": "planning",
     "name": "writing-plans",
     "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
     "risk": "unknown",
@@ -12642,7 +12642,7 @@
   {
     "id": "youtube-automation",
     "path": "skills/youtube-automation",
-    "category": "uncategorized",
+    "category": "marketing",
     "name": "youtube-automation",
     "description": "Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Always search tools first for current schemas.",
     "risk": "unknown",
@@ -12692,7 +12692,7 @@
   {
     "id": "zod-validation-expert",
     "path": "skills/zod-validation-expert",
-    "category": "uncategorized",
+    "category": "framework",
     "name": "zod-validation-expert",
     "description": "Expert in Zod \u2014 TypeScript-first schema validation. Covers parsing, custom errors, refinements, type inference, and integration with React Hook Form, Next.js, and tRPC.",
     "risk": "safe",
@@ -12702,7 +12702,7 @@
   {
     "id": "zoho-crm-automation",
     "path": "skills/zoho-crm-automation",
-    "category": "uncategorized",
+    "category": "business",
     "name": "zoho-crm-automation",
     "description": "Automate Zoho CRM tasks via Rube MCP (Composio): create/update records, search contacts, manage leads, and convert leads. Always search tools first for current schemas.",
     "risk": "unknown",
