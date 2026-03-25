@@ -83,6 +83,55 @@ class AuthManager:
 
         return info
 
+    def setup_auth_cdp(self, cdp_url: str = "http://127.0.0.1:9222") -> bool:
+        """
+        Authenticate via CDP - connect to an already-running browser.
+        The user must have Chrome open with --remote-debugging-port=9222
+        and be logged into Google.
+
+        Returns:
+            True if authentication captured successfully
+        """
+        print(f"🔐 Connecting to browser via CDP at {cdp_url}...")
+
+        playwright = None
+        browser = None
+
+        try:
+            playwright = sync_playwright().start()
+            browser, context = BrowserFactory.connect_over_cdp(playwright, cdp_url)
+
+            # Open a NEW tab (never hijack user's tabs)
+            page = context.new_page()
+            page.goto("https://notebooklm.google.com", wait_until="domcontentloaded")
+
+            # Check if authenticated
+            time.sleep(3)  # Give time for redirects
+            if "notebooklm.google.com" in page.url and "accounts.google.com" not in page.url:
+                print("  ✅ Authenticated via CDP!")
+                self._save_browser_state(context)
+                self._save_auth_info()
+                page.close()  # Close our tab, leave user's browser running
+                return True
+            else:
+                print("  ❌ Not authenticated. Please log into Google in your browser first.")
+                page.close()
+                return False
+
+        except Exception as e:
+            print(f"  ❌ CDP connection error: {e}")
+            print("  💡 Make sure Chrome is running with: google-chrome --remote-debugging-port=9222")
+            print("     Or on macOS: /Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --remote-debugging-port=9222")
+            return False
+
+        finally:
+            # In CDP mode, do NOT close browser - just disconnect
+            if playwright:
+                try:
+                    playwright.stop()
+                except Exception:
+                    pass
+
     def setup_auth(self, headless: bool = False, timeout_minutes: int = 10) -> bool:
         """
         Perform interactive authentication setup
@@ -290,8 +339,12 @@ def main():
 
     subparsers = parser.add_subparsers(dest='command', help='Commands')
 
-    # Setup command
-    setup_parser = subparsers.add_parser('setup', help='Setup authentication')
+    # CDP Setup command (preferred)
+    cdp_parser = subparsers.add_parser('cdp-setup', help='Setup auth via CDP (connect to running browser at port 9222)')
+    cdp_parser.add_argument('--cdp-url', default='http://127.0.0.1:9222', help='CDP URL (default: http://127.0.0.1:9222)')
+
+    # Setup command (fallback)
+    setup_parser = subparsers.add_parser('setup', help='Setup authentication (requires local Chrome/Chromium)')
     setup_parser.add_argument('--headless', action='store_true', help='Run in headless mode')
     setup_parser.add_argument('--timeout', type=float, default=10, help='Login timeout in minutes (default: 10)')
 
@@ -305,7 +358,8 @@ def main():
     subparsers.add_parser('clear', help='Clear authentication')
 
     # Re-auth command
-    reauth_parser = subparsers.add_parser('reauth', help='Re-authenticate (clear + setup)')
+    reauth_parser = subparsers.add_parser('reauth', help='Re-authenticate (clear + setup via CDP)')
+    reauth_parser.add_argument('--cdp-url', default='http://127.0.0.1:9222', help='CDP URL (default: http://127.0.0.1:9222)')
     reauth_parser.add_argument('--timeout', type=float, default=10, help='Login timeout in minutes (default: 10)')
 
     args = parser.parse_args()
@@ -314,7 +368,15 @@ def main():
     auth = AuthManager()
 
     # Execute command
-    if args.command == 'setup':
+    if args.command == 'cdp-setup':
+        if auth.setup_auth_cdp(cdp_url=args.cdp_url):
+            print("\n✅ Authentication setup complete via CDP!")
+            print("You can now use ask_question.py to query NotebookLM")
+        else:
+            print("\n❌ CDP authentication failed")
+            exit(1)
+
+    elif args.command == 'setup':
         if auth.setup_auth(headless=args.headless, timeout_minutes=args.timeout):
             print("\n✅ Authentication setup complete!")
             print("You can now use ask_question.py to query NotebookLM")
@@ -337,15 +399,17 @@ def main():
             print("Authentication is valid and working")
         else:
             print("Authentication is invalid or expired")
-            print("Run: auth_manager.py setup")
+            print("Run: auth_manager.py cdp-setup")
 
     elif args.command == 'clear':
         if auth.clear_auth():
             print("Authentication cleared")
 
     elif args.command == 'reauth':
-        if auth.re_auth(timeout_minutes=args.timeout):
-            print("\n✅ Re-authentication complete!")
+        # Clear then re-auth via CDP
+        auth.clear_auth()
+        if auth.setup_auth_cdp(cdp_url=args.cdp_url):
+            print("\n✅ Re-authentication complete via CDP!")
         else:
             print("\n❌ Re-authentication failed")
             exit(1)

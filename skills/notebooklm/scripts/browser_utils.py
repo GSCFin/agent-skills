@@ -16,6 +16,22 @@ class BrowserFactory:
     """Factory for creating configured browser contexts"""
 
     @staticmethod
+    def connect_over_cdp(
+        playwright: Playwright,
+        cdp_url: str = "http://127.0.0.1:9222"
+    ):
+        """
+        Connect to an already-running browser via CDP (Chrome DevTools Protocol).
+        This is the preferred method - uses the human's authenticated session directly.
+
+        Returns:
+            Tuple of (browser, context) - caller must NOT call browser.close()
+        """
+        browser = playwright.chromium.connect_over_cdp(cdp_url)
+        context = browser.contexts[0]
+        return browser, context
+
+    @staticmethod
     def launch_persistent_context(
         playwright: Playwright,
         headless: bool = True,
@@ -24,11 +40,12 @@ class BrowserFactory:
         """
         Launch a persistent browser context with anti-detection features
         and cookie workaround.
+        Fallback method when CDP is not available.
         """
         # Launch persistent context
         context = playwright.chromium.launch_persistent_context(
             user_data_dir=user_data_dir,
-            channel="chrome",  # Use real Chrome
+            channel="chromium",  # Use Playwright-managed Chromium
             headless=headless,
             no_viewport=True,
             ignore_default_args=["--enable-automation"],

@@ -52,7 +52,7 @@ def ask_notebooklm(question: str, notebook_url: str, headless: bool = True) -> s
     auth = AuthManager()
 
     if not auth.is_authenticated():
-        print("⚠️ Not authenticated. Run: python auth_manager.py setup")
+        print("⚠️ Not authenticated. Run: python auth_manager.py cdp-setup")
         return None
 
     print(f"💬 Asking: {question}")
@@ -60,16 +60,26 @@ def ask_notebooklm(question: str, notebook_url: str, headless: bool = True) -> s
 
     playwright = None
     context = None
+    browser = None
+    using_cdp = False
 
     try:
         # Start playwright
         playwright = sync_playwright().start()
 
-        # Launch persistent browser context using factory
-        context = BrowserFactory.launch_persistent_context(
-            playwright,
-            headless=headless
-        )
+        # Try CDP first, fall back to persistent context
+        try:
+            import urllib.request
+            urllib.request.urlopen("http://127.0.0.1:9222/json/version", timeout=2)
+            browser, context = BrowserFactory.connect_over_cdp(playwright)
+            using_cdp = True
+            print("  🔗 Connected via CDP")
+        except Exception:
+            print("  📦 CDP not available, using persistent context...")
+            context = BrowserFactory.launch_persistent_context(
+                playwright,
+                headless=headless
+            )
 
         # Navigate to notebook
         page = context.new_page()
@@ -163,6 +173,13 @@ def ask_notebooklm(question: str, notebook_url: str, headless: bool = True) -> s
             return None
 
         print("  ✅ Got answer!")
+
+        # Close our tab (don't leave orphan tabs in CDP mode)
+        try:
+            page.close()
+        except:
+            pass
+
         # Add follow-up reminder to encourage Claude to ask more questions
         return answer + FOLLOW_UP_REMINDER
 
@@ -173,8 +190,8 @@ def ask_notebooklm(question: str, notebook_url: str, headless: bool = True) -> s
         return None
 
     finally:
-        # Always clean up
-        if context:
+        # In CDP mode: do NOT close browser, just disconnect
+        if not using_cdp and context:
             try:
                 context.close()
             except:
