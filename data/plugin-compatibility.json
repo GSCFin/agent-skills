@@ -19545,6 +19545,44 @@
       "runtime_files": []
     },
     {
+      "id": "rayden-code",
+      "path": "skills/rayden-code",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "rayden-use",
+      "path": "skills/rayden-use",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "react-best-practices",
       "path": "skills/react-best-practices",
       "targets": {
@@ -26711,10 +26749,10 @@
     }
   ],
   "summary": {
-    "total_skills": 1397,
+    "total_skills": 1399,
     "supported": {
-      "codex": 1367,
-      "claude": 1382
+      "codex": 1369,
+      "claude": 1384
     },
     "blocked": {
       "codex": 30,

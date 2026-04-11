@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1397,
+  "total": 1399,
   "skills": [
     {
       "id": "00-andruia-consultant",
@@ -25141,6 +25141,68 @@
         "optimization"
       ],
       "path": "skills/rag-implementation/SKILL.md"
+    },
+    {
+      "id": "rayden-code",
+      "name": "rayden-code",
+      "description": "Generate React code with Rayden UI components using correct props, tokens, and premium layout patterns",
+      "category": "development",
+      "tags": [
+        "react",
+        "tailwind",
+        "design-system",
+        "ui",
+        "components",
+        "vibe-coding",
+        "rayden",
+        "rayna-ui",
+        "code-generation"
+      ],
+      "triggers": [
+        "react",
+        "tailwind",
+        "design-system",
+        "ui",
+        "components",
+        "vibe-coding",
+        "rayden",
+        "rayna-ui",
+        "code-generation",
+        "code",
+        "generate",
+        "correct"
+      ],
+      "path": "skills/rayden-code/SKILL.md"
+    },
+    {
+      "id": "rayden-use",
+      "name": "rayden-use",
+      "description": "Build and maintain Rayden UI components and screens in Figma via Figma MCP with full design token enforcement",
+      "category": "general",
+      "tags": [
+        "figma",
+        "design-system",
+        "ui",
+        "components",
+        "mcp",
+        "rayden",
+        "rayna-ui"
+      ],
+      "triggers": [
+        "figma",
+        "design-system",
+        "ui",
+        "components",
+        "mcp",
+        "rayden",
+        "rayna-ui",
+        "maintain",
+        "screens",
+        "via",
+        "full",
+        "token"
+      ],
+      "path": "skills/rayden-use/SKILL.md"
     },
     {
       "id": "react-best-practices",

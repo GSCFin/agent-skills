@@ -22533,6 +22533,50 @@
     }
   },
   {
+    "id": "rayden-code",
+    "path": "skills/rayden-code",
+    "category": "development",
+    "name": "rayden-code",
+    "description": "Generate React code with Rayden UI components using correct props, tokens, and premium layout patterns",
+    "risk": "safe",
+    "source": "https://github.com/playbookTV/rayden-ui-design-skill",
+    "date_added": "2026-04-10",
+    "plugin": {
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": []
+    }
+  },
+  {
+    "id": "rayden-use",
+    "path": "skills/rayden-use",
+    "category": "design",
+    "name": "rayden-use",
+    "description": "Build and maintain Rayden UI components and screens in Figma via Figma MCP with full design token enforcement",
+    "risk": "safe",
+    "source": "https://github.com/playbookTV/rayden-ui-design-skill",
+    "date_added": "2026-04-10",
+    "plugin": {
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": []
+    }
+  },
+  {
     "id": "react-best-practices",
     "path": "skills/react-best-practices",
     "category": "web-development",
