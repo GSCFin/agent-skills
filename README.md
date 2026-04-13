@@ -428,7 +428,6 @@ We officially thank the following contributors for their help in making this rep
 - [@UrRhb](https://github.com/UrRhb)
 - [@uriva](https://github.com/uriva)
 - [@babysor](https://github.com/babysor)
-- [@SenSei2121](https://github.com/SenSei2121)
 - [@code-vj](https://github.com/code-vj)
 - [@viktor-ferenczi](https://github.com/viktor-ferenczi)
 - [@vprudnikoff](https://github.com/vprudnikoff)
