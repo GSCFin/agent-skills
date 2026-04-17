@@ -189,6 +189,16 @@ bd update <id> --claim --json    # Atomic claiming — fails if already claimed
 
 ---
 
+## Agent Execution Rules (Lessons Learned)
+
+When scripting `bd` execution via bash or executing tools agentically, **prevent silent failures** by adhering to the following rules:
+
+1. **Always verify `.beads/` exists** or run `bd init` before executing any `bd create` commands. If skipped, `bd` improperly writes to the global `~/.beads` directory.
+2. **Use `set -ex` instead of `set -e`** for long bash scripts. `set -e` fails silently when commands error out. Using `-x` (trace) ensures all executed variables are visibly logged for agent debugging.
+3. **Do not hallucinate global CLI flags**. For instance, `bd create` supports `--silent` to output strictly the ID (`epic1=$(bd create ... --silent)`), but `bd delete` will crash the script if padded with `--silent`. Always verify via `bd <cmd> --help`.
+
+---
+
 ## References (Progressive Disclosure)
 
 **Layer 2 — Command Details:**
