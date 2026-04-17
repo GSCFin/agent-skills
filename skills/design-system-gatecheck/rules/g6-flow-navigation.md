@@ -59,8 +59,8 @@ Evaluate how closely the actual dynamic sequence of DOM events matched the expec
 
 | Artifact            | Path                                                                   |
 | ------------------- | ---------------------------------------------------------------------- |
-| Navigation graph    | `apps/website/tests/e2e/uiux-gatecheck/reports/navigation-graph.json`  |
-| Navigation failures | `apps/website/tests/e2e/uiux-gatecheck/reports/navigation-failures.md` |
+| Navigation graph    | `<e2e-testing-root>/uiux-gatecheck/reports/navigation-graph.json`  |
+| Navigation failures | `<e2e-testing-root>/uiux-gatecheck/reports/navigation-failures.md` |
 
 ## Switching Rules
 

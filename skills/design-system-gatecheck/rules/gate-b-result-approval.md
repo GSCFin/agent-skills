@@ -16,11 +16,11 @@ All artifacts from the test execution phase:
 | ------------------- | ---------------------------------------------------------------------- |
 | UIUX report         | `docs/design/reports/feature-x-uiux-report.html`                       |
 | Scorecard           | `docs/design/reports/feature-x-scorecard.json`                         |
-| Conformance report  | `apps/website/tests/e2e/uiux-gatecheck/reports/conformance.md`         |
-| Visual diffs        | `apps/website/tests/e2e/uiux-gatecheck/reports/visual/*.png`           |
-| Navigation failures | `apps/website/tests/e2e/uiux-gatecheck/reports/navigation-failures.md` |
-| A11y results        | `apps/website/tests/e2e/uiux-gatecheck/reports/a11y.json`              |
-| Contrast report     | `apps/website/tests/e2e/uiux-gatecheck/reports/contrast.csv`           |
+| Conformance report  | `<e2e-testing-root>/uiux-gatecheck/reports/conformance.md`         |
+| Visual diffs        | `<e2e-testing-root>/uiux-gatecheck/reports/visual/*.png`           |
+| Navigation failures | `<e2e-testing-root>/uiux-gatecheck/reports/navigation-failures.md` |
+| A11y results        | `<e2e-testing-root>/uiux-gatecheck/reports/a11y.json`              |
+| Contrast report     | `<e2e-testing-root>/uiux-gatecheck/reports/contrast.csv`           |
 
 ## Processing
 

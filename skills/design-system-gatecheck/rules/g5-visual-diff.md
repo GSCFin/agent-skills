@@ -6,7 +6,7 @@
 
 ## Input
 
-- Baseline screenshots (from `apps/website/tests/e2e/uiux-gatecheck/baselines/` directory)
+- Baseline screenshots (from `<e2e-testing-root>/uiux-gatecheck/baselines/` directory)
 - Test scenarios from coverage matrix
 - Deterministic environment (from Step 3)
 
@@ -53,7 +53,7 @@ mask:
 For each failing comparison, generate a 3-image set:
 
 ```
-apps/website/tests/e2e/uiux-gatecheck/reports/visual/
+<e2e-testing-root>/uiux-gatecheck/reports/visual/
   mobile-light-default.baseline.png
   mobile-light-default.actual.png
   mobile-light-default.diff.png    ← highlighted pixel differences
@@ -63,8 +63,8 @@ apps/website/tests/e2e/uiux-gatecheck/reports/visual/
 
 | Artifact       | Path                                                                                         |
 | -------------- | -------------------------------------------------------------------------------------------- |
-| Diff images    | `apps/website/tests/e2e/uiux-gatecheck/reports/visual/*.png` (baseline/actual/diff triplets) |
-| Visual summary | `apps/website/tests/e2e/uiux-gatecheck/reports/visual-summary.json`                          |
+| Diff images    | `<e2e-testing-root>/uiux-gatecheck/reports/visual/*.png` (baseline/actual/diff triplets) |
+| Visual summary | `<e2e-testing-root>/uiux-gatecheck/reports/visual-summary.json`                          |
 
 ## Switching Rules
 

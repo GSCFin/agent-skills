@@ -51,7 +51,7 @@ Replace non-deterministic data with fixed values:
 Create fixture files for each state in the test matrix:
 
 ```
-apps/website/tests/e2e/uiux-gatecheck/fixtures/
+<e2e-testing-root>/uiux-gatecheck/fixtures/
   feature-x.default.json
   feature-x.empty.json
   feature-x.error.json
@@ -71,7 +71,7 @@ apps/website/tests/e2e/uiux-gatecheck/fixtures/
 
 | Artifact          | Path                                                    |
 | ----------------- | ------------------------------------------------------- |
-| Fixture files     | `apps/website/tests/e2e/uiux-gatecheck/fixtures/*.json` |
+| Fixture files     | `<e2e-testing-root>/uiux-gatecheck/fixtures/*.json` |
 | Playwright config | `playwright.config.ts` (deterministic profile)          |
 
 ## Switching Rules
