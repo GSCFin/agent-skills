@@ -45,6 +45,10 @@ The frontmatter is at the very top, wrapped in `---`:
 ---
 name: my-skill-name
 description: "Brief description of what this skill does"
+risk: safe
+source: community
+source_repo: owner/repo
+source_type: community
 ---
 ```
 
@@ -59,8 +63,37 @@ description: "Brief description of what this skill does"
 #### `description`
 - **What it is:** One-sentence summary
 - **Format:** String in quotes
-- **Length:** Keep it under 150 characters
+- **Length:** Keep it under 200 characters
 - **Example:** `"Stripe payment integration patterns including checkout, subscriptions, and webhooks"`
+
+#### `risk`
+- **What it is:** The safety classification of the skill
+- **Values:** `none` | `safe` | `critical` | `offensive` | `unknown`
+- **Example:** `risk: safe`
+- **Guide:**
+  - `none` — pure text/reasoning, no commands or mutations
+  - `safe` — reads files, runs non-destructive commands
+  - `critical` — modifies state, deletes files, pushes to production
+  - `offensive` — pentesting/red-team tools; **must** include "Authorized Use Only" warning
+  - `unknown` — legacy or unclassified; prefer a concrete level for new skills
+
+#### `source`
+- **What it is:** Attribution for the skill's origin
+- **Format:** URL or a short label
+- **Examples:** `source: community`, `source: "https://example.com/original"`
+- **Use `"self"`** if you are the original author
+
+#### `source_repo`
+- **What it is:** Canonical GitHub repository identifier for external upstream material
+- **Format:** `OWNER/REPO`
+- **Example:** `source_repo: Dimillian/Skills`
+- **When required:** Use it when the skill adapts or imports material from an external GitHub repository
+
+#### `source_type`
+- **What it is:** Which README credits bucket the upstream repo belongs to
+- **Values:** `official` | `community` | `self`
+- **Examples:** `source_type: official`, `source_type: community`
+- **Rule:** `self` means no external README repo credit is required
 
 ### Optional Fields
 
@@ -70,11 +103,35 @@ Some skills include additional metadata:
 ---
 name: my-skill-name
 description: "Brief description"
-version: "1.0.0"
-author: "Your Name"
+risk: safe
+source: community
+source_repo: owner/repo
+source_type: community
+author: "your-name-or-handle"
 tags: ["react", "typescript", "testing"]
+tools: [claude, cursor, gemini]
 ---
 ```
+
+#### `license` *(optional)*
+- **What it is:** SPDX license identifier for the upstream source material
+- **Format:** A valid SPDX expression (e.g. `MIT`, `Apache-2.0`, `CC-BY-4.0`)
+- **Example:** `license: MIT`
+- **When to use:** Declare when `source_repo` points to material under a known license. Omitting it signals "license not verified" to downstream tooling.
+
+#### `license_source` *(optional)*
+- **What it is:** Direct URL to the upstream license file
+- **Format:** Full URL string
+- **Example:** `license_source: "https://github.com/owner/repo/blob/main/LICENSE"`
+- **When to use:** Include alongside `license:` so automated tooling can verify the claim. If the upstream repo has no LICENSE file, omit this field.
+
+### Source-credit contract
+
+- External GitHub-derived skills should declare both `source_repo` and `source_type`.
+- `source_type: official` means the repo must appear in `README.md` under `### Official Sources`.
+- `source_type: community` means the repo must appear in `README.md` under `### Community Contributors`.
+- `source: self` plus `source_type: self` is the correct shape for original repository content.
+- PR CI checks README credit coverage for changed skills, so missing or misbucketed repo credits will block the PR once `source_repo` is declared.
 
 ---
 
@@ -124,19 +181,19 @@ More instructions...
 **This is the heart of your skill** - clear, actionable steps
 
 #### 5. Examples
-```markdown
+````markdown
 ## Examples
 
 ### Example 1: [Use Case]
-\`\`\`javascript
+```javascript
 // Example code
-\`\`\`
+```
 
 ### Example 2: [Another Use Case]
-\`\`\`javascript
+```javascript
 // More code
-\`\`\`
 ```
+````
 
 **Why examples matter:** They show the AI exactly what good output looks like
 
@@ -158,7 +215,26 @@ More instructions...
   **Solution:** How to fix it
 ```
 
-#### 8. Related Skills
+#### 8. Security & Safety Notes (for command/network/offensive skills)
+
+If your skill includes:
+
+- shell commands or command-like examples,
+- remote fetch/install or token usage guidance,
+- file mutation, destructive actions, or privileged operations,
+
+add a dedicated section before final wrap-up:
+
+```markdown
+## Security & Safety Notes
+
+- This is safe/unsafe scope
+- Required confirmation or authorization
+- Example allowlist notes (if needed):
+  `<!-- security-allowlist: ... -->`
+```
+
+#### 9. Related Skills
 ```markdown
 ## Related Skills
 
@@ -224,12 +300,12 @@ scripts/
 ```
 
 **Reference them in SKILL.md:**
-```markdown
+````markdown
 Run the setup script:
-\`\`\`bash
+```bash
 bash scripts/setup.sh
-\`\`\`
 ```
+````
 
 ### Examples Directory
 
@@ -256,12 +332,12 @@ templates/
 ```
 
 **Reference in SKILL.md:**
-```markdown
+````markdown
 Use this template as a starting point:
-\`\`\`typescript
+```typescript
 {{#include templates/component.tsx}}
-\`\`\`
 ```
+````
 
 ### References Directory
 
@@ -304,11 +380,11 @@ references/
 
 #### Code Blocks
 Always specify the language:
-```markdown
-\`\`\`javascript
+````markdown
+```javascript
 const example = "code";
-\`\`\`
 ```
+````
 
 #### Lists
 Use consistent formatting:
