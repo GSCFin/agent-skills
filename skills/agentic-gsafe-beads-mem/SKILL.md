@@ -162,7 +162,69 @@ The hardest part isn't the CLI — it's the **software engineering judgment** to
 4. **Wire dependencies** — Ask: "Can an agent start B without A being done?"
 5. **Review the critical path** — Trace the longest blocking chain. Look for decoupling opportunities.
 
+> ⚠️ **CRITICAL (UNID Tracking):** If the document being decomposed into beads issues contains a Universal ID (UNID), the resulting beads issue description/message MUST explicitly mention that UNID to maintain traceability.
+> 
+> **XX-YYY-ZZZ Convention (Max 2 Hyphens):** All `beads-id` values use a strict 2-segment parent / 3-segment child format. Parent IDs have 1 hyphen (`prd-tplan`), section IDs have 2 hyphens (`prd-tplan-s1`). The `br-` prefix is NOT used. Category prefixes are: `prd` (specs), `pln` (plans), `doc` (context/records), `rev` (reviews). IDs are short human-chosen abbreviations, never auto-generated from file paths.
+> 
+> **Single-Line Metadata Rule:** Any HTML comment metadata containing `beads-id` and `satisfies` MUST be written strictly on a single line (e.g., `<!-- beads-id: pln-rdmap-s3 | satisfies: prd-tplan-s1 -->`). A single `beads-id` can satisfy one or multiple other `beads-id`s (comma-separated). Multi-line metadata blocks are strictly prohibited.
+> 
+> **Verification Gate & Proactive Checking:** ALWAYS run the bundled validation scripts (in this skill's `scripts/` directory) whenever you **change, add new, or delete** `beads-id` metadata in documents. If violations are found, you MUST fix them before proceeding.
+
 **A healthy epic should have 2-4 tasks ready at any time.** This enables multi-agent parallelism without coordination chaos.
+
+---
+
+## Beads-ID Validation for `./docs/` (SSOT)
+
+This skill ships with two Python scripts in `scripts/` to validate the consistency of `<!-- beads-id: ... -->` metadata across the project's `./docs/` directory (the Single Source of Truth for requirements, plans, and reviews).
+
+### `scripts/extract_ids.py` — Extract & Stats
+
+Recursively scans all `*.md` files and extracts every `<!-- beads-id: ... -->` tag.
+
+```bash
+# Full JSON extraction (all IDs with file, line, satisfies)
+python3 .agents/skills/agentic-gsafe-beads-mem/scripts/extract_ids.py ./docs
+
+# Quick stats: hyphen counts + violation check
+python3 .agents/skills/agentic-gsafe-beads-mem/scripts/extract_ids.py ./docs --stats
+```
+
+**`--stats` output example:**
+```text
+Total Unique Beads: 483
+
+  1 hyphens ->   26 beads  [Parents (base docs)]
+  2 hyphens ->  457 beads  [Children (sections)]
+
+✅ All IDs comply with the 2-hyphen max convention.
+```
+
+### `scripts/verify_hierarchy.py` — Parent-Child Integrity
+
+Confirms every 2-hyphen child ID has a matching 1-hyphen parent. **Exits with code 1 if orphans are found** (CI-friendly).
+
+```bash
+python3 .agents/skills/agentic-gsafe-beads-mem/scripts/verify_hierarchy.py ./docs
+```
+
+**Output example:**
+```text
+## Beads-ID Hierarchy Verification
+
+  Parents  (1 hyphen):  26
+  Children (2 hyphens): 457
+  Matched to parent:    457
+  Orphans:              0
+
+✅ All children have valid parents. Zero orphans.
+```
+
+### When to Run
+
+- **After any docs edit** that adds, removes, or modifies `<!-- beads-id: ... -->` tags
+- **During session bookends** — run alongside `bv --robot-triage` at session start/end
+- **Before `bd sync`** — ensure metadata SSOT is clean before pushing
 
 ---
 
@@ -209,3 +271,156 @@ When scripting `bd` execution via bash or executing tools agentically, **prevent
 - [Installation Guide](references/installation.md) — Installing bd and bv, init modes, Claude Code hooks
 - [bd Troubleshooting](references/bd-troubleshooting.md) — Common pitfalls, merge conflicts, database recovery
 - [bv Troubleshooting](references/bv-troubleshooting.md) — TUI blocking, stale metrics, large graph handling
+
+---
+
+## Command Help References
+
+> ⚠️ **CRITICAL INSTRUCTION FOR AGENTS:** DO NOT execute `bd help` or `bd update --help` in the terminal to learn how to use the commands. The complete help outputs are provided below to save time and tokens. Read them here directly.
+
+### `bd help`
+
+```text
+Agent-first issue tracker (SQLite + JSONL)
+
+Usage: bd [OPTIONS] <COMMAND>
+
+Commands:
+  agents       Manage AGENTS.md workflow instructions
+  audit        Record and label agent interactions (append-only JSONL)
+  blocked      List blocked issues
+  changelog    Generate changelog from closed issues
+  close        Close an issue
+  comments     Manage comments
+  completions  Generate shell completions
+  config       Configuration management
+  count        Count issues with optional grouping
+  create       Create a new issue
+  defer        Defer issues (schedule for later)
+  delete       Delete an issue (creates tombstone)
+  dep          Manage dependencies
+  doctor       Run read-only diagnostics
+  epic         Epic management commands
+  graph        Visualize dependency graph
+  history      Manage local history backups
+  info         Show diagnostic metadata about the workspace
+  init         Initialize a beads workspace
+  label        Manage labels
+  lint         Check issues for missing template sections
+  list         List issues
+  orphans      List orphan issues (referenced in commits but open)
+  q            Quick capture (create issue, print ID only)
+  query        Manage saved queries
+  ready        List ready issues (unblocked, not deferred)
+  reopen       Reopen an issue
+  schema       Emit JSON Schemas for br output types (for agent/tooling integration)
+  search       Search issues
+  show         Show issue details
+  stale        List stale issues
+  stats        Show project statistics
+  status       Alias for stats
+  sync         Sync database with JSONL file (export or import)
+  undefer      Undefer issues (make ready again)
+  update       Update an issue
+  upgrade      Upgrade br to the latest version
+  version      Show version information
+  where        Show the active .beads directory
+  help         Print this message or the help of the given subcommand(s)
+
+Options:
+      --db <DB>                      Database path (auto-discover .beads/*.db if not set)
+      --actor <ACTOR>                Actor name for audit trail
+      --json                         Output as JSON
+      --no-daemon                    Force direct mode (no daemon) - effectively no-op in br v1
+      --no-auto-flush                Skip auto JSONL export
+      --no-auto-import               Skip auto import check
+      --allow-stale                  Allow stale DB (bypass freshness check warning)
+      --lock-timeout <LOCK_TIMEOUT>  `SQLite` busy timeout in ms
+      --no-db                        JSONL-only mode (no DB connection)
+  -v, --verbose...                   Increase logging verbosity (-v, -vv)
+  -q, --quiet                        Quiet mode (no output except errors)
+      --no-color                     Disable colored output
+  -h, --help                         Print help
+  -V, --version                      Print version
+```
+
+### `bd update --help`
+
+```text
+Update an issue
+
+Usage: bd update [OPTIONS] [IDS]...
+
+Arguments:
+  [IDS]...  Issue IDs to update
+
+Options:
+      --title <TITLE>
+          Update title
+      --description <DESCRIPTION>
+          Update description [aliases: --body]
+      --design <DESIGN>
+          Update design notes
+      --acceptance-criteria <ACCEPTANCE_CRITERIA>
+          Update acceptance criteria [aliases: --acceptance]
+      --notes <NOTES>
+          Update additional notes
+  -s, --status <STATUS>
+          Change status
+  -p, --priority <PRIORITY>
+          Change priority (0-4 or P0-P4)
+  -t, --type <TYPE>
+          Change issue type
+      --assignee <ASSIGNEE>
+          Assign to user (empty string clears)
+      --owner <OWNER>
+          Set owner (empty string clears)
+      --claim
+          Atomic claim (assignee=actor + `status=in_progress`)
+      --force
+          Force update even if issue is blocked
+      --due <DUE>
+          Set due date (empty string clears)
+      --defer <DEFER>
+          Set defer until date (empty string clears)
+      --estimate <ESTIMATE>
+          Set time estimate
+      --add-label <ADD_LABEL>
+          Add label(s)
+      --remove-label <REMOVE_LABEL>
+          Remove label(s)
+      --set-labels <SET_LABELS>
+          Set label(s) (replaces all) - repeatable like bd
+      --parent <PARENT>
+          Reparent to new parent (empty string removes parent)
+      --external-ref <EXTERNAL_REF>
+          Set external reference
+      --session <SESSION>
+          Set `closed_by_session` when closing
+      --db <DB>
+          Database path (auto-discover .beads/*.db if not set)
+      --actor <ACTOR>
+          Actor name for audit trail
+      --json
+          Output as JSON
+      --no-daemon
+          Force direct mode (no daemon) - effectively no-op in br v1
+      --no-auto-flush
+          Skip auto JSONL export
+      --no-auto-import
+          Skip auto import check
+      --allow-stale
+          Allow stale DB (bypass freshness check warning)
+      --lock-timeout <LOCK_TIMEOUT>
+          `SQLite` busy timeout in ms
+      --no-db
+          JSONL-only mode (no DB connection)
+  -v, --verbose...
+          Increase logging verbosity (-v, -vv)
+  -q, --quiet
+          Quiet mode (no output except errors)
+      --no-color
+          Disable colored output
+  -h, --help
+          Print help
+```
